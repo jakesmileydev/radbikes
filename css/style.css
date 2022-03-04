@@ -1,0 +1,43 @@
+.section--hero {
+  display: flex;
+}
+.hero-img {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0)
+    ),
+    url(/images/hero3.jpg);
+  width: 100vw;
+  height: calc(100vh - 102.38px);
+  background-size: cover;
+  background-position: 30% 35%;
+  position: relative;
+}
+.hero-text {
+  color: white;
+  width: 30rem;
+  position: absolute;
+  top: 40%;
+  left: 14%;
+}
+.hero-subheader {
+  color: orange;
+  border: 1px solid orange;
+  display: inline-block;
+  padding: 0.6rem 1rem;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.hero-header {
+}
+.hero-btn {
+  font-size: 1rem;
+  background-color: TRAnsparent;
+  margin-top: 1.4rem;
+  padding: 0 0.6rem;
+}
+.hero-btn:hover,
+.hero-btn:active {
+}

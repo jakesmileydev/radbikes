@@ -1,0 +1,83 @@
+* {
+  font-family: helvetica;
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 3.6rem;
+}
+h3 {
+  font-size: 1.4rem;
+}
+button {
+  color: white;
+  background-color: black;
+  padding: 0.8rem 2rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+a:link,
+a:visited {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* /////////////////////////////////////////////////////////////// */
+/*   HEADER   */
+header {
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  max-width: 80rem;
+}
+
+header nav {
+  padding: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+.header-link {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  padding-left: 2rem;
+  cursor: pointer;
+}
+.header-link:nth-child(1) {
+  padding-left: 0;
+}
+.logo {
+  position: absolute;
+  left: 45%;
+  top: 1.8rem;
+  font-size: 1.2rem;
+}
+.rad {
+  font-family: "Rock Salt", cursive;
+  border: 2px solid black;
+  padding: 0 0.3rem 0 0.6rem;
+  margin-right: 0.1rem;
+}
+.a {
+  font-family: inherit;
+  position: absolute;
+  transform: translate(2px, -2px);
+}
+.cart-qty {
+  font-family: "Roboto";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  color: white;
+  background-color: black;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.ph-shopping-cart-bold {
+  font-size: 1.6rem;
+  padding-right: 0.2rem;
+}
