@@ -1,6 +1,6 @@
 @media (max-width: 98em) {
   .section--featured {
-    max-width: 69rem;
+    max-width: 67rem;
   }
   .slider__btn--left {
     left: -4%;
@@ -16,5 +16,61 @@
   }
   .section--hero {
     margin-top: 56.31px;
+  }
+}
+
+@media (max-width: 61em) {
+  /* Collections */
+  .collections {
+    grid-template-columns: 1fr 1fr;
+  }
+  /* Make brand logos smaller */
+  .trek,
+  .kona {
+    height: 2.6rem;
+  }
+  .giant {
+    height: 2rem;
+    padding-bottom: 0;
+  }
+  .specialized {
+    height: 10rem;
+  }
+  .fox {
+    height: 6rem;
+  }
+  /* Make slider display 1 item instead of 3 */
+  .slider {
+    height: 50rem;
+    max-width: 44rem;
+  }
+  .slide {
+    width: auto;
+  }
+  .slider__btn--left {
+    left: 10%;
+  }
+  .slider__btn--right {
+    right: 10%;
+  }
+
+  /* CTA */
+  .section--cta {
+    margin-left: 2rem;
+  }
+  .cta {
+    grid-template-columns: 1.1fr 1fr;
+  }
+
+  /* Footer */
+  .footer-wrapper {
+    grid-template-columns: 1fr 1fr 1fr 1.2fr;
+  }
+}
+
+@media (max-width: 48rem) {
+  .slider {
+    max-width: 30rem;
+    height: 36rem;
   }
 }
