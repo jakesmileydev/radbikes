@@ -64,8 +64,9 @@ header {
   position: fixed;
   width: 100%;
   background-color: white;
-  z-index: 69;
+  z-index: 99;
   box-shadow: 2px 2px 8px rgba(78, 78, 78, 0.418);
+  top: 0;
 }
 .header-wrapper {
   margin: 0 auto;
@@ -135,7 +136,11 @@ header .logo {
 /* ////////////////////////////////////////////////////////// */
 /* FOOTER */
 footer {
-  background-color: rgb(10, 10, 10);
+  min-width: 100%;
+
+  background-size: cover;
+  background-image: url(/images/footerbackground.png);
+  background-position: 50% 30%;
 }
 .footer-wrapper {
   font-family: "Raleway";
@@ -145,10 +150,11 @@ footer {
   grid-template-columns: 1fr 1fr 1fr 1.6fr;
   position: relative;
   font-size: 1rem;
-  padding: 1rem 8rem 6rem 8rem;
+  padding: 16rem 8rem 6rem 8rem;
   max-width: 90rem;
   margin: 0 auto;
 }
+
 .footer-link {
   transition: all 0.2s ease;
 }

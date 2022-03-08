@@ -1,1 +1,20 @@
+@media (max-width: 98em) {
+  .section--featured {
+    max-width: 69rem;
+  }
+  .slider__btn--left {
+    left: -4%;
+  }
+  .slider__btn--right {
+    right: -4%;
+  }
+}
 
+@media (max-width: 72em) {
+  html {
+    font-size: 80%;
+  }
+  .section--hero {
+    margin-top: 56.31px;
+  }
+}
