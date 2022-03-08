@@ -6,14 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- icons -->
-
+    <!-- -thin, -light, -bold, -fill, -duotone -->
     <script src="https://unpkg.com/phosphor-icons"></script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Rock+Salt&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Raleway&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Rock+Salt&display=swap"
       rel="stylesheet"
     />
     <!-- style sheets -->
@@ -22,29 +22,29 @@
     <link rel="stylesheet" href="/css/queries.css" />
 
     <!-- scripts -->
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
     <title>The Bike Shop</title>
   </head>
   <body>
     <header>
-      <nav>
+      <nav class="main-nav">
         <a class="header-link" href="">HOME</a>
         <a class="header-link" href="">BIKES</a>
         <a class="header-link" href="">GEAR</a>
         <a class="header-link" href="">COMPONENTS</a>
       </nav>
-      <a href="" class="header-link logo">
+      <a href="" class="logo">
         <span class="rad">R<span class="a">a</span> &nbsp;D</span>BIKES
       </a>
       <nav>
         <a class="header-link" href="">CONTACT</a>
-        <i class="header-link ph-shopping-cart-bold"></i>
+        <i class="ph-shopping-cart-bold"></i>
         <div class="cart-qty">0</div>
       </nav>
     </header>
     <main>
       <section class="section--hero">
-        <div class="hero-img"></div>
+        <img src="/images/hero3.jpg" class="hero-img" alt="" />
         <div class="hero-text">
           <h1 class="hero-header">MAKE ALL TRAILS YOUR PLAYGROUND</h1>
           <p></p>
@@ -52,7 +52,7 @@
         </div>
       </section>
       <section class="section--brands">
-        <h2 class="brands-header">Only the highest quality brands:</h2>
+        <h2 class="brands-header">The highest quality brands:</h2>
         <div class="brands">
           <img class="trek" src="/images/brands/trek.png" alt="" />
           <img
@@ -65,6 +65,161 @@
           <img class="kona" src="/images/brands/kona.png" alt="" />
         </div>
       </section>
+      <section class="section--products">
+        <h2 class="products-header">Shop Collections</h2>
+        <div class="products">
+          <div class="product" name="GEAR">
+            <img src="/images/gearsnowedit.jpg" alt="" class="product--gear" />
+          </div>
+          <div class="product" name="FULL SUSPENSION">
+            <img src="/images/splashfull.jpg" alt="" class="product--fullsus" />
+          </div>
+          <div class="product" name="COMPONENTS">
+            <img src="/images/shockcomponent.jpg" alt="" " />
+          </div>
+
+          <div class="product" name="HARDTAIL">
+            <img
+              src="/images/hardtailsunset.jpg"
+              alt=""
+              class="product--hardtail"
+            />
+          </div>
+        </div>
+      </section>
+      <section class="section--featured">
+        <h2 class="featured-header">Best Sellers</h2>
+        <div class="slider">
+          <div class="slide">
+            <div class="featured-product">
+              <img src="/images/products/sjcompalloy.webp" alt="" />
+              <p class="featured-product-name">Stumpjumper Comp Alloy</p>
+              <p class="featured-product-price">$ 3,600</p>
+              <button>ADD TO CART</button>
+              <a href="" class="featured-product-link">Learn More</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="featured-product">
+              <img src="/images/products/turbolevoalloy.webp" alt="" />
+              <p class="featured-product-name">Turbo Levo Alloy</p>
+              <p class="featured-product-price">$ 5,500</p>
+              <button>ADD TO CART</button>
+              <a href="" class="featured-product-link">Learn More</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="featured-product">
+              <img src="/images/products/rockhopper275.webp" alt="" />
+              <p class="featured-product-name">Rockhopper 27.5</p>
+              <p class="featured-product-price">$ 700</p>
+              <button>ADD TO CART</button>
+              <a href="" class="featured-product-link">Learn More</a>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="featured-product">
+              <img src="/images/products/fusecomp29.webp" alt="" />
+              <p class="featured-product-name">Fuse Comp 29</p>
+              <p class="featured-product-price">$ 2,300</p>
+              <button>ADD TO CART</button>
+              <a href="" class="featured-product-link">Learn More</a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="featured-product">
+              <img src="/images/products/sjevoexpert.webp" alt="" />
+              <p class="featured-product-name">Stumpjumper Evo Expert</p>
+              <p class="featured-product-price">$ 6,300</p>
+              <button>ADD TO CART</button>
+              <a href="" class="featured-product-link">Learn More</a>
+            </div>
+          </div>
+          <div class="slide">
+            <div class="featured-product">
+              <img src="/images/products/rockhopperexpert.webp" alt="" />
+              <p class="featured-product-name">Fuse Comp 29</p>
+              <p class="featured-product-price">$ 1,400</p>
+              <button>ADD TO CART</button>
+              <a href="" class="featured-product-link">Learn More</a>
+            </div>
+          </div>
+        </div>
+        <i class="ph-caret-left slider__btn slider__btn--left"></i>
+        <i
+          class="ph-caret-right slider__btn slider__btn--right slider__btn--usable"
+        ></i>
+      </section>
+      <section class="section--cta">
+        <div class="cta-images">
+          <img class="cta-image-side" src="/images/bikecamp.jpg" alt="" />
+          <img class="cta-background" src="/images/compass.png" alt="" />
+          <img class="cta-image" src="/images/adventure.jpg" alt="" />
+        </div>
+        <form action="" class="cta-form">
+          <h4 class="cta-subheader">STAY IN TOUCH</h4>
+          <h3 class="cta-header">NEVER MISS AN ADVENTURE</h3>
+          <p class="cta-text">
+            Get updates on sales, new inventory, events, MTB news, trail
+            recommendations, and more.
+          </p>
+          <label for="cta-input--email"></label>
+          <input class="cta-input--email" type="email" />
+          <button>Sign Me Up</button>
+        </form>
+      </section>
     </main>
+    <img src="/images/footer.png" class="footer-img" alt="" />
+    <footer>
+      <div class="footer-wrapper">
+        <ul class="column">
+          <h4>SHOP</h4>
+          <li><a href="" class="footer-link">Bikes</a></li>
+          <li><a href="" class="footer-link">Gear</a></li>
+          <li><a href="" class="footer-link">Components</a></li>
+          <li><a href="" class="footer-link">Hardtail</a></li>
+          <li><a href="" class="footer-link">Full Suspension</a></li>
+        </ul>
+        <ul class="column">
+          <h4>EXPLORE</h4>
+
+          <li><a href="" class="footer-link">Our story</a></li>
+          <li><a href="" class="footer-link">Jobs</a></li>
+          <li><a href="" class="footer-link">Blog</a></li>
+          <li><a href="" class="footer-link">Sustainability</a></li>
+        </ul>
+        <ul class="column">
+          <h4>SUPPORT</h4>
+          <li><a href="" class="footer-link">Accessibility</a></li>
+          <li><a href="" class="footer-link">Privacy policy</a></li>
+          <li><a href="" class="footer-link">Contact us</a></li>
+          <li><a href="" class="footer-link">Find a repair shop</a></li>
+          <li><a href="" class="footer-link">FAQ</a></li>
+        </ul>
+        <div class="column column-logo">
+          <a href="" class="logo">
+            <span class="rad">R<span class="a">a</span> &nbsp;D</span>BIKES
+          </a>
+          <div class="icons">
+            <a target="blank" href="https://www.instagram.com"
+              ><i class="ph-instagram-logo-light"></i
+            ></a>
+            <a target="blank" href="https://www.facebook.com"
+              ><i class="ph-facebook-logo-light"></i
+            ></a>
+            <a target="blank" href="https://www.pinterest.com"
+              ><i class="ph-pinterest-logo-light"></i
+            ></a>
+            <a target="blank" href="https://www.twitter.com"
+              ><i class="ph-twitter-logo-light"></i
+            ></a>
+          </div>
+          <p>&COPY; Jake Smiley 2022</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
