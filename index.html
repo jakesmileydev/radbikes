@@ -27,20 +27,22 @@
   </head>
   <body>
     <header>
-      <nav class="main-nav">
-        <a class="header-link" href="">HOME</a>
-        <a class="header-link" href="">BIKES</a>
-        <a class="header-link" href="">GEAR</a>
-        <a class="header-link" href="">COMPONENTS</a>
-      </nav>
-      <a href="" class="logo">
-        <span class="rad">R<span class="a">a</span> &nbsp;D</span>BIKES
-      </a>
-      <nav>
-        <a class="header-link" href="">CONTACT</a>
-        <i class="ph-shopping-cart-bold"></i>
-        <div class="cart-qty">0</div>
-      </nav>
+      <div class="header-wrapper">
+        <nav class="main-nav">
+          <a class="header-link" href="">HOME</a>
+          <a class="header-link" href="">BIKES</a>
+          <a class="header-link" href="">GEAR</a>
+          <a class="header-link" href="">COMPONENTS</a>
+        </nav>
+        <a href="" class="logo">
+          <span class="rad">R<span class="a">a</span> &nbsp;D</span>BIKES
+        </a>
+        <nav>
+          <a class="header-link" href="">CONTACT</a>
+          <i class="ph-shopping-cart-bold"></i>
+          <div class="cart-qty">0</div>
+        </nav>
+      </div>
     </header>
     <main>
       <section class="section--hero">
@@ -167,8 +169,12 @@
               Get updates on sales, new inventory, events, MTB news, trail
               recommendations, and more.
             </p>
-            <label for="cta-input--email"></label>
-            <input class="cta-input--email" type="email" />
+            <!-- <label for="cta-input--email">Email</label> -->
+            <input
+              class="cta-input--email"
+              type="email"
+              placeholder="steveharrington@stranger.com"
+            />
             <button>Sign Me Up</button>
           </form>
         </div>

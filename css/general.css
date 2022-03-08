@@ -61,6 +61,13 @@ ul {
 /* /////////////////////////////////////////////////////////////// */
 /*   HEADER   */
 header {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 69;
+  box-shadow: 2px 2px 8px rgba(78, 78, 78, 0.418);
+}
+.header-wrapper {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
