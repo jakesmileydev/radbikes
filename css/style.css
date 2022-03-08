@@ -44,20 +44,14 @@
 /* ///////////////////////////////////////////////////////////// */
 /* BRANDS */
 .section--brands {
-  margin-top: 4.8rem;
+  opacity: 0.3;
 }
-.brands-header {
-  text-align: center;
-  font-family: "Raleway", sans-serif;
 
-  font-size: 1.4rem;
-  font-weight: 600;
-}
 .brands {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin: 0 4rem;
+  margin-top: 8rem;
   transform: translateY(-2rem);
 }
 .trek,
@@ -82,10 +76,12 @@
 /* ///////////////////////////////////////////////////////////// */
 /* PRODUCTS */
 .section--products {
-  margin: 0 auto;
+  margin: 8rem auto 0 auto;
   max-width: 90rem;
 }
-
+.products-header {
+  margin-bottom: 2.6rem;
+}
 .products {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -149,7 +145,7 @@
 .section--featured {
   position: relative;
   max-width: 90rem;
-  margin: 8rem auto 16rem auto;
+  margin: 4rem auto 16rem auto;
 }
 .slider {
   height: 32rem;
@@ -228,8 +224,10 @@
 
 /* ///////////////////////////////////////////////////////////// */
 /* CTA */
-
 .section--cta {
+  margin-left: 8rem;
+}
+.cta {
   margin: 20rem auto 16rem auto;
   display: grid;
   grid-template-columns: 1.2fr 1fr;
