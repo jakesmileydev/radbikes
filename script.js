@@ -1,4 +1,5 @@
 "use strict";
+
 const slider = function () {
   const slides = document.querySelectorAll(".slide");
   const btnLeft = document.querySelector(".slider__btn--left");
@@ -62,3 +63,16 @@ const slider = function () {
   });
 };
 slider();
+
+const footerMobileBtns = document.querySelectorAll(".footer-mobile-btn");
+const array = Array.from(footerMobileBtns);
+console.log(footerMobileBtns);
+console.log(array);
+array.forEach((btn) => {
+  btn.addEventListener("click", function (e) {
+    btn
+      .closest(".column-wrapper")
+      .querySelector(".column")
+      .classList.toggle("column--open");
+  });
+});

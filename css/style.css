@@ -44,38 +44,6 @@
   color: #ff8811;
 }
 /* ///////////////////////////////////////////////////////////// */
-/* BRANDS */
-.section--brands {
-  opacity: 0.3;
-}
-
-.brands {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 8rem;
-  transform: translateY(-2rem);
-}
-.trek,
-.giant,
-.specialized,
-.fox,
-.kona {
-  height: 3rem;
-}
-.giant {
-  height: 2.2rem;
-  padding-bottom: 0.2rem;
-}
-.specialized {
-  padding-top: 0.6rem;
-  height: 12rem;
-}
-.fox {
-  height: 8rem;
-  padding-top: 1rem;
-}
-/* ///////////////////////////////////////////////////////////// */
 /* COLLECTIONS */
 .section--collections {
   margin: 8rem auto 0 auto;
@@ -141,6 +109,39 @@
   transform: translateY(0);
   opacity: 1;
 }
+/* ///////////////////////////////////////////////////////////// */
+/* BRANDS */
+.section--brands {
+  opacity: 0.3;
+}
+
+.brands {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 8rem;
+  transform: translateY(-2rem);
+}
+.trek,
+.giant,
+.specialized,
+.fox,
+.kona {
+  height: 3rem;
+}
+.giant {
+  height: 2.2rem;
+  padding-bottom: 0.2rem;
+}
+.specialized {
+  padding-top: 0.6rem;
+  height: 12rem;
+}
+.fox {
+  height: 8rem;
+  padding-top: 1rem;
+}
+
 /* ////////////////////////////////////////////////////////// */
 /* FEATURED */
 
@@ -221,10 +222,10 @@
   color: black;
 }
 .slider__btn--left {
-  left: -2%;
+  left: -3%;
 }
 .slider__btn--right {
-  right: -2%;
+  right: -3%;
 }
 
 /* ///////////////////////////////////////////////////////////// */
