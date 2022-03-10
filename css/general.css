@@ -137,20 +137,21 @@ header .logo {
 /* FOOTER */
 footer {
   width: 100%;
-
+  /* margin-top: -2px; */
   background-size: cover;
   background-image: url(/images/footerbackground.png);
   background-position: 50% 30%;
 }
+
 .footer-wrapper {
   font-family: "Raleway";
   width: 100%;
   color: white;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1.6fr;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
   position: relative;
   font-size: 1rem;
-  padding: 16rem 8rem 6rem 8rem;
+  padding: 18rem 6rem 4rem 6rem;
   max-width: 90rem;
   margin: 0 auto;
 }
@@ -187,10 +188,14 @@ footer .a {
   flex-direction: column;
   gap: 0.6rem;
 }
+
 .column-logo {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 1.4rem;
+  padding-right: 4rem;
 }
 .footer-img {
   margin-top: 4rem;
@@ -208,4 +213,12 @@ footer .a {
   color: #ff8811;
   cursor: pointer;
   transform: translateY(-2px);
+}
+.footer-copy {
+  grid-column: 1 / 5;
+  text-align: center;
+  padding-top: 6rem;
+}
+.footer-copy p {
+  margin-bottom: 0.4rem;
 }

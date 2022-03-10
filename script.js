@@ -64,15 +64,25 @@ const slider = function () {
 };
 slider();
 
-const footerMobileBtns = document.querySelectorAll(".footer-mobile-btn");
-const array = Array.from(footerMobileBtns);
-console.log(footerMobileBtns);
-console.log(array);
-array.forEach((btn) => {
-  btn.addEventListener("click", function (e) {
-    btn
-      .closest(".column-wrapper")
-      .querySelector(".column")
-      .classList.toggle("column--open");
+const mobileFooterNav = function () {
+  const footerMobileBtns = document.querySelectorAll(".footer-mobile-btn");
+  const array = Array.from(footerMobileBtns);
+
+  array.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      const width = document.body.clientWidth;
+      console.log(width);
+      if (width > 768) return;
+
+      const thisColumn = btn
+        .closest(".column-wrapper")
+        .querySelector(".column");
+
+      thisColumn.classList.toggle("column--open");
+      btn
+        .querySelector(".mobile-btn-icon")
+        .classList.toggle("mobile-btn-icon--open");
+    });
   });
-});
+};
+mobileFooterNav();

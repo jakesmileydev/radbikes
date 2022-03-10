@@ -2,13 +2,13 @@
 /* HERO */
 .section--hero {
   display: flex;
-
+  position: relative;
   margin-top: 70.38px;
 }
 .hero-img {
   width: 100%;
   min-height: 40rem;
-  height: calc(100vh - 70.39px);
+  max-height: calc(100vh - 70.39px);
 
   object-fit: cover;
   object-position: 20% 20%;
@@ -238,6 +238,7 @@
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   max-width: 90rem;
+  box-sizing: content-box;
 }
 .cta-images {
   position: relative;
