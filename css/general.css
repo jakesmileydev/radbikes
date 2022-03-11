@@ -72,6 +72,7 @@ header {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+
   max-width: 90rem;
   position: relative;
 }
@@ -148,10 +149,15 @@ header .logo {
   cursor: pointer;
   background: none;
   border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin-left: 0.2rem;
 }
 .mobile-nav-btn {
-  width: 2.9rem;
-  height: 2.4rem;
+  width: 2.2rem;
+  height: 1.6rem;
   position: relative;
   margin: 1rem;
   transform: rotate(0deg);
@@ -161,7 +167,7 @@ header .logo {
 .mobile-nav-btn span {
   display: block;
   position: absolute;
-  height: 3px;
+  height: 2px;
   width: 100%;
   background: #000;
   opacity: 1;
@@ -196,17 +202,16 @@ header .logo {
 /* FOOTER */
 footer {
   width: 100%;
-
 }
 footer img {
   width: 100%;
   height: 13rem;
   margin-bottom: -1rem;
   object-fit: cover;
-  object-position: 50% 0%;
+  object-position: 50% 20%;
 }
 
-.footer-wrapper {
+.footer-inner {
   font-family: "Raleway";
   width: 100%;
   color: white;
@@ -215,9 +220,12 @@ footer img {
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
   position: relative;
   font-size: 1rem;
-  padding: 0 6rem 4rem 6rem;
+  padding: 2rem 6rem 4rem 6rem;
   max-width: 90rem;
   margin: 0 auto;
+}
+.footer-outer {
+  background-color: black;
 }
 
 .footer-mobile-btn {
