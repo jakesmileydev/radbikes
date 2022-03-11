@@ -18,13 +18,14 @@ const slider = function () {
 
   // Next slide
   const nextSlide = function () {
+    const width = document.body.clientWidth;
     if (curSlide === 0) {
       btnLeft.classList.add("slider__btn--usable");
     }
-    if (curSlide === maxSlide - 4) {
+    if (curSlide === maxSlide - (width > 976 ? 4 : 2)) {
       btnRight.classList.remove("slider__btn--usable");
     }
-    if (curSlide === maxSlide - 3) {
+    if (curSlide === maxSlide - (width > 976 ? 3 : 1)) {
       return;
     } else {
       curSlide++;
@@ -86,3 +87,16 @@ const mobileFooterNav = function () {
   });
 };
 mobileFooterNav();
+const mobileNav = function () {
+  document
+    .querySelector(".mobile-nav-btn-wrapper")
+    .addEventListener("click", function () {
+      document
+        .querySelector(".mobile-nav-btn")
+        .classList.toggle("mobile-nav-btn--open");
+      document
+        .querySelector(".main-nav")
+        .classList.toggle("main-nav-mobile-open");
+    });
+};
+mobileNav();

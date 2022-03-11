@@ -64,23 +64,30 @@ header {
   position: fixed;
   width: 100%;
   background-color: white;
-  z-index: 99;
+  z-index: 9999;
   box-shadow: 2px 2px 8px rgba(78, 78, 78, 0.418);
   top: 0;
 }
-.header-wrapper {
+.main-nav-wrapper {
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   max-width: 90rem;
+  position: relative;
 }
 
-header nav {
+.shopping-cart {
   padding: 1.2rem 2rem;
   display: flex;
   align-items: center;
+
+  margin-left: auto;
 }
 .main-nav {
+  padding: 1.6rem 2rem;
+  display: flex;
+  align-items: center;
+  position: absolute;
   gap: 2rem;
 }
 
@@ -107,9 +114,10 @@ header nav {
 .header-link:nth-child(1) {
   margin-left: 0;
 }
+
 header .logo {
   position: absolute;
-  left: 45%;
+  left: 2rem;
   top: 0.8rem;
   font-size: 1.2rem;
 }
@@ -134,24 +142,80 @@ header .logo {
 }
 
 /* ////////////////////////////////////////////////////////// */
+/* MOBILE NAVIGATION */
+.mobile-nav-btn-wrapper {
+  height: 100%;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.mobile-nav-btn {
+  width: 2.9rem;
+  height: 2.4rem;
+  position: relative;
+  margin: 1rem;
+  transform: rotate(0deg);
+  transition: 0.5s ease-in-out;
+  display: none;
+}
+.mobile-nav-btn span {
+  display: block;
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: #000;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  transition: 0.25s ease-in-out;
+}
+.mobile-nav-btn span:nth-child(1) {
+  top: 10%;
+}
+.mobile-nav-btn span:nth-child(2) {
+  top: 50%;
+}
+.mobile-nav-btn span:nth-child(3) {
+  top: 90%;
+}
+
+.mobile-nav-btn.mobile-nav-btn--open span:nth-child(1) {
+  top: 50%;
+  transform: rotate(135deg);
+}
+.mobile-nav-btn.mobile-nav-btn--open span:nth-child(2) {
+  opacity: 0;
+  left: -110%;
+}
+.mobile-nav-btn.mobile-nav-btn--open span:nth-child(3) {
+  top: 50%;
+  transform: rotate(-135deg);
+}
+
+/* ////////////////////////////////////////////////////////// */
 /* FOOTER */
 footer {
   width: 100%;
-  /* margin-top: -2px; */
-  background-size: cover;
-  background-image: url(/images/footerbackground.png);
-  background-position: 50% 30%;
+
+}
+footer img {
+  width: 100%;
+  height: 13rem;
+  margin-bottom: -1rem;
+  object-fit: cover;
+  object-position: 50% 0%;
 }
 
 .footer-wrapper {
   font-family: "Raleway";
   width: 100%;
   color: white;
+  background-color: black;
   display: grid;
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
   position: relative;
   font-size: 1rem;
-  padding: 18rem 6rem 4rem 6rem;
+  padding: 0 6rem 4rem 6rem;
   max-width: 90rem;
   margin: 0 auto;
 }

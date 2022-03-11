@@ -148,7 +148,7 @@
 .section--featured {
   position: relative;
   max-width: 90rem;
-  margin: 4rem auto 10rem auto;
+  margin: 4rem auto 0 auto;
 }
 .slider {
   height: 34rem;
@@ -241,8 +241,8 @@
   box-sizing: content-box;
 }
 .cta-images {
-  position: relative;
-  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
 }
 .cta-image {
   width: 100%;

@@ -20,6 +20,9 @@
   .footer-copy {
     padding-top: 4rem;
   }
+  .footer-mobile-btn {
+    margin-bottom: 1.4rem;
+  }
 }
 
 @media (max-width: 61em) {
@@ -48,7 +51,7 @@
   /* Slider */
 
   .slider {
-    height: 55rem;
+    height: 57rem;
   }
   .slide {
     width: auto;
@@ -61,9 +64,7 @@
   .section--cta {
     margin-left: 2rem;
   }
-  .section--featured {
-    margin-bottom: 2rem;
-  }
+ 
   .cta {
     grid-template-columns: 1.1fr 1fr;
     margin: 0;
@@ -76,6 +77,31 @@
 }
 
 @media (max-width: 48rem) {
+  .mobile-nav-btn {
+    display: block;
+  }
+  .main-nav-wrapper {
+    justify-content: flex-start;
+  }
+  .main-nav {
+    position: absolute;
+    padding: 2rem 4rem 0 2rem;
+    height: 100vh;
+    font-size: 2.2rem;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 54px;
+    transform: translateX(-100%);
+    transition: all 0.25s ease-in-out;
+  }
+  .main-nav.main-nav-mobile-open {
+    transform: translateX(0);
+  }
+
+  header .logo {
+    left: 43%;
+  }
   /* ///////////////////////// */
   /*  Hero */
   .hero-img {
@@ -108,7 +134,9 @@
     margin: 4rem 0;
   }
   /* ///////////////////////// */
-
+  .slider {
+    height: 48rem;
+  }
   /* CTA */
   .cta {
     display: block;
@@ -127,10 +155,10 @@
   /* Footer */
   footer {
     background-image: none;
-    background-color: black;
     overflow: hidden;
   }
-  footer::before {
+  
+  /* footer::before {
     display: block;
     content: " ";
     height: 13rem;
@@ -139,11 +167,13 @@
     background-image: url(/images/footerbackground.png);
     background-size: cover;
     background-position: 50% 0%;
-  }
+  } */
   .footer-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 4rem 4rem 2rem 4rem;
+    padding: 0 4rem 2rem 4rem;
+    background-color: black;
+
   }
   .column {
     gap: 0;
@@ -203,11 +233,24 @@
     padding: 0 8rem;
   }
   .slider {
-    height: 47rem;
+    height: 44rem;
   }
 }
 @media (max-width: 31em) {
   footer::before {
     height: 9rem;
+  }
+  .hero-text {
+    padding: 0 2rem;
+  }
+  .slider {
+    height: 38rem;
+  }
+  .cta-form {
+    padding: 3rem;
+  }
+  .column-logo {
+    flex-direction: column;
+    padding: 0 0rem 4rem 0rem;
   }
 }
