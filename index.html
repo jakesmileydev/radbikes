@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="/css/queries.css" />
 
     <!-- scripts -->
+    <script defer src="productData.js"></script>
     <script defer src="script.js"></script>
 
     <title>Rad Bikes | Best bikes in the northwest</title>
@@ -71,30 +72,44 @@
       <section class="section--collections">
         <h2 class="collections-header">Shop Collections</h2>
         <div class="collections">
-          <div class="collection" name="GEAR">
-            <img
-              src="/images/gearsnowedit.jpg"
-              alt=""
-              class="collection--gear"
-            />
+          <div>
+            <h3>GEAR</h3>
+            <div
+              class="collection"
+              name="HELMETS, GLOVES, GOGGLES, AND APPAREL"
+            >
+              <img
+                src="/images/gearsnowedit.jpg"
+                alt=""
+                class="collection--gear"
+              />
+            </div>
           </div>
-          <div class="collection" name="FULL SUSPENSION">
-            <img
-              src="/images/splashfull.jpg"
-              alt=""
-              class="collection--fullsus"
-            />
+          <div>
+            <h3>FULL SUSPENSION</h3>
+            <div class="collection" name="FRONT AND REAR SHOCKS">
+              <img
+                src="/images/splashfull.jpg"
+                alt=""
+                class="collection--fullsus"
+              />
+            </div>
           </div>
-          <div class="collection" name="COMPONENTS">
-            <img src="/images/shockcomponent.jpg" alt="" " />
+          <div>
+            <h3>COMPONENTS</h3>
+            <div class="collection" name="SHOCKS, FRAMES, SEATPOSTS, AND MORE">
+              <img src="/images/shockcomponent.jpg" alt="" " />
+            </div>
           </div>
-
-          <div class="collection" name="HARDTAIL">
-            <img
-              src="/images/hardtailsunset.jpg"
-              alt=""
-              class="collection--hardtail"
-            />
+          <div>
+            <h3>HARDTAIL</h3>
+            <div class="collection" name="QUALITY MEETS BUDGET">
+              <img
+                src="/images/hardtailsunset.jpg"
+                alt=""
+                class="collection--hardtail"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -116,7 +131,10 @@
         <div class="slider">
           <div class="slide">
             <div class="featured-product">
-              <img src="/images/products/sjcompalloy.webp" alt="" />
+              <img
+                src="/images/featured/sjcompalloy.webp"
+                alt="Stumpjumper Comp Alloy mountain bike"
+              />
               <p class="featured-product-name">Stumpjumper Comp Alloy</p>
               <p class="featured-product-price">$ 3,600</p>
               <button>ADD TO CART</button>
@@ -126,7 +144,10 @@
 
           <div class="slide">
             <div class="featured-product">
-              <img src="/images/products/turbolevoalloy.webp" alt="" />
+              <img
+                src="/images/featured/turbolevoalloy.webp"
+                alt="Turbo Levo Alloy mountain bike"
+              />
               <p class="featured-product-name">Turbo Levo Alloy</p>
               <p class="featured-product-price">$ 5,500</p>
               <button>ADD TO CART</button>
@@ -136,7 +157,10 @@
 
           <div class="slide">
             <div class="featured-product">
-              <img src="/images/products/rockhopper275.webp" alt="" />
+              <img
+                src="/images/featured/rockhopper275.webp"
+                alt="Rockhopper 27.5 mountain bike"
+              />
               <p class="featured-product-name">Rockhopper 27.5</p>
               <p class="featured-product-price">$ 700</p>
               <button>ADD TO CART</button>
@@ -146,16 +170,10 @@
 
           <div class="slide">
             <div class="featured-product">
-              <img src="/images/products/fusecomp29.webp" alt="" />
-              <p class="featured-product-name">Fuse Comp 29</p>
-              <p class="featured-product-price">$ 2,300</p>
-              <button>ADD TO CART</button>
-              <a href="" class="featured-product-link">Learn More</a>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="featured-product">
-              <img src="/images/products/sjevoexpert.webp" alt="" />
+              <img
+                src="/images/featured/sjevoexpert.webp"
+                alt="Stumpjumper Evo Expert mountain bike"
+              />
               <p class="featured-product-name">Stumpjumper Evo Expert</p>
               <p class="featured-product-price">$ 6,300</p>
               <button>ADD TO CART</button>
@@ -164,7 +182,10 @@
           </div>
           <div class="slide">
             <div class="featured-product">
-              <img src="/images/products/rockhopperexpert.webp" alt="" />
+              <img
+                src="/images/featured/fusecomp29.webp"
+                alt=" mountain bike"
+              />
               <p class="featured-product-name">Fuse Comp 29</p>
               <p class="featured-product-price">$ 1,400</p>
               <button>ADD TO CART</button>
@@ -182,7 +203,7 @@
           <div class="cta-images">
             <img class="cta-image" src="/images/cta.png" alt="" />
           </div>
-          <form action="" class="cta-form">
+          <form name="signup" class="cta-form" method="post">
             <h4 class="cta-subheader">STAY IN TOUCH</h4>
             <h3 class="cta-header">NEVER MISS AN ADVENTURE</h3>
             <p class="cta-text">
@@ -191,6 +212,7 @@
             </p>
             <!-- <label for="cta-input--email">Email</label> -->
             <input
+              name="email"
               class="cta-input--email"
               type="email"
               placeholder="Enter Your Email"
@@ -265,11 +287,12 @@
           </div>
           <div class="footer-copy">
             <p>
-              &COPY;Rad Bikes is a fictional e-commerce site designed and
-              developed by:
+              &COPY;Rad Bikes is a front end web development project designed
+              and coded by
+              <a target="blank" href="https://www.github.com/jakesmileydev"
+                >Jake Smiley</a
+              >
             </p>
-
-            <p>Jake Smiley 2022</p>
           </div>
         </div>
       </div>

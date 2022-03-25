@@ -29,6 +29,19 @@
   .footer-mobile-btn {
     margin-bottom: 1.4rem;
   }
+
+  .checkmark__circle {
+    stroke-dasharray: 200;
+    stroke-dashoffset: 200;
+  }
+  .checkmark {
+    width: 90px;
+    height: 90px;
+  }
+  .checkmark__check {
+    stroke-dasharray: 82;
+    stroke-dashoffset: 82;
+  }
 }
 
 @media (max-width: 61em) {
@@ -278,5 +291,9 @@
   }
   .featured-product {
     padding: 2rem;
+  }
+  .section--cta {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
   }
 }
