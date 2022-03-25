@@ -3,6 +3,11 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 h1 {
   font-family: "Roboto";
   margin: 1rem 0;
@@ -202,6 +207,7 @@ header .logo {
 /* FOOTER */
 footer {
   width: 100%;
+  margin-top: auto;
 }
 footer img {
   width: 100%;

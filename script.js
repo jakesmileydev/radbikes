@@ -119,3 +119,13 @@ const formSubmit = function () {
   });
 };
 formSubmit();
+
+const navigate = function () {
+  const location = window.location.hash.slice(1);
+  if (!location) return;
+  console.log(location);
+  if (!location.includes("Shop")) return;
+  document.querySelector("main").innerHTML = "";
+};
+window.addEventListener("hashchange", navigate);
+window.addEventListener("load", navigate);
