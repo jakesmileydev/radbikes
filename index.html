@@ -31,7 +31,7 @@
   <body>
     <header>
       <div class="main-nav-wrapper">
-        <a href="" class="logo">
+        <a href="index.html" class="logo">
           <span class="rad">R<span class="a">a</span> &nbsp;D</span>BIKES
         </a>
         <button class="mobile-nav-btn-wrapper">
@@ -43,11 +43,11 @@
         </button>
 
         <nav class="main-nav">
-          <a class="header-link" href="">HOME</a>
-          <a class="header-link" href="products.html">BIKES</a>
-          <a class="header-link" href="">GEAR</a>
-          <a class="header-link" href="">COMPONENTS</a>
-          <a class="header-link" href="">CONTACT</a>
+          <a class="header-link" href="#Shop">SHOP</a>
+          <a class="header-link" href="#Shop/Bikes">BIKES</a>
+          <a class="header-link" href="#Shop/Gear">GEAR</a>
+          <a class="header-link" href="#Shop/Components">COMPONENTS</a>
+          <a class="header-link" href="#Contact">CONTACT</a>
         </nav>
         <div class="shopping-cart">
           <i class="ph-shopping-cart-bold"></i>
@@ -65,7 +65,7 @@
         <div class="hero-text">
           <h1 class="hero-header">MAKE ALL TRAILS YOUR PLAYGROUND</h1>
           <p></p>
-          <button class="hero-btn">EXPLORE BIKES</button>
+          <a href="#Shop" class="hero-btn">SHOP NOW</a>
         </div>
       </section>
 
@@ -74,7 +74,8 @@
         <div class="collections">
           <div>
             <h3>GEAR</h3>
-            <div
+            <a
+              href="#Shop/Gear"
               class="collection"
               name="HELMETS, GLOVES, GOGGLES, AND APPAREL"
             >
@@ -83,33 +84,45 @@
                 alt=""
                 class="collection--gear"
               />
-            </div>
+            </a>
           </div>
           <div>
             <h3>FULL SUSPENSION</h3>
-            <div class="collection" name="FRONT AND REAR SHOCKS">
+            <a
+              href="#Shop/Bikes/FullSuspension"
+              class="collection"
+              name="FRONT AND REAR SHOCKS"
+            >
               <img
                 src="/images/splashfull.jpg"
                 alt=""
                 class="collection--fullsus"
               />
-            </div>
+            </a>
           </div>
           <div>
             <h3>COMPONENTS</h3>
-            <div class="collection" name="SHOCKS, FRAMES, SEATPOSTS, AND MORE">
+            <a
+              href="#Shop/Components"
+              class="collection"
+              name="SHOCKS, FRAMES, SEATPOSTS, AND MORE"
+            >
               <img src="/images/shockcomponent.jpg" alt="" " />
-            </div>
+            </a>
           </div>
           <div>
             <h3>HARDTAIL</h3>
-            <div class="collection" name="QUALITY MEETS BUDGET">
+            <a
+              href="#Shop/Bikes/Hardtail"
+              class="collection"
+              name="QUALITY MEETS BUDGET"
+            >
               <img
                 src="/images/hardtailsunset.jpg"
                 alt=""
                 class="collection--hardtail"
               />
-            </div>
+            </a>
           </div>
         </div>
       </section>
@@ -252,11 +265,19 @@
               SHOP<i class="ph-caret-down mobile-btn-icon"></i>
             </button>
             <ul class="column">
-              <li><a href="" class="footer-link">Bikes</a></li>
-              <li><a href="" class="footer-link">Gear</a></li>
-              <li><a href="" class="footer-link">Components</a></li>
-              <li><a href="" class="footer-link">Hardtail</a></li>
-              <li><a href="" class="footer-link">Full Suspension</a></li>
+              <li><a href="#Shop/Bikes" class="footer-link">Bikes</a></li>
+              <li><a href="#Shop/Gear" class="footer-link">Gear</a></li>
+              <li>
+                <a href="#Shop/Components" class="footer-link">Components</a>
+              </li>
+              <li>
+                <a href="#Shop/Bikes/Hardtail" class="footer-link">Hardtail</a>
+              </li>
+              <li>
+                <a href="#Shop/Bikes/FullSuspension" class="footer-link"
+                  >Full Suspension</a
+                >
+              </li>
             </ul>
           </div>
 
@@ -280,7 +301,7 @@
             <ul class="column">
               <li><a href="" class="footer-link">Accessibility</a></li>
               <li><a href="" class="footer-link">Privacy policy</a></li>
-              <li><a href="" class="footer-link">Contact us</a></li>
+              <li><a href="#Contact" class="footer-link">Contact us</a></li>
               <li><a href="" class="footer-link">Find a repair shop</a></li>
               <li><a href="" class="footer-link">FAQ</a></li>
             </ul>

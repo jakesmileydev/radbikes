@@ -249,5 +249,82 @@ const products = [
     ["GEAR"],
     "FOX"
   ),
+  new Product(
+    "ROVTERSP",
+    "Roval Terra Seatpost",
+    "The Roval Terra seatpost is the best choice for riding mixed terrain, gravel, or rough roads because it smooths the ride by allowing significant vertical compliance.",
+    "images/product/rovtersp.jpg",
+    [
+      "18mm Vertical Compliance (20mm offset / Full Extension)",
+      "Proven clamp design ensures ease of adjustment and slip-free performance.",
+      "No-Fault crash replacement policy. Lifetime warranty.",
+      "Lightweight - 194 grams (27.2 x 330mm x 0)",
+    ],
+    250,
+    ["COMPONENT"],
+    "SPECIALIZED"
+  ),
+  new Product(
+    "SUPAEP",
+    "Supacaz ePedal - CNC Alloy",
+    "Compact cartridge bushings paired with a sealed bearing system keep things running smoothly for miles and miles…",
+    "/images/product/supaep.jpg",
+
+    [
+      "CNC-machined 6061 Aluminum",
+      "Weight: 170 grams (each)",
+      "Ultralight compact bushings + sealed bearings",
+      "Dimensions: 11 x 20 x 7 cm",
+    ],
+    165,
+    ["COMPONENT"],
+    "SPECIALIZED"
+  ),
+  new Product(
+    "DHX",
+    "2022 FOX DHX",
+    "DHX brings coil-sprung, magic-carpet, trail smoothing performance in a wide range of configurations to the trails and beyond.",
+    "/images/product/dhx.jpg",
+    [
+      "ALL-NEW chassis and damper",
+      "LSC (Low Speed Compression) adjuster",
+      "Reduced damper noise",
+      "Full diameter spring retainer with wire ring (like DHX2)",
+    ],
+    560,
+    ["COMPONENT"],
+    "FOX"
+  ),
+  new Product(
+    "TFC",
+    "Top Fuel C Frameset",
+    "Top Fuel C is a carbon full suspension frameset made for a super-fast and fun down-county build",
+    "/images/product/tfc.webp",
+    [
+      "OCLV Mountain Carbon frame with Mino Link adjustable geometry",
+      "Knock Block 2.0 headset",
+      "120mm Fox Factory Float shock with 2-position DPS damper",
+      "Bontrager Elite 35mm stem,",
+    ],
+    3720,
+    ["COMPONENT"],
+    "TREK"
+  ),
+  new Product(
+    "SCRSC",
+    "SRAM Code RSC HYD Brake Lever/Caliper",
+    "SRAM added 15% extra piston power and 30% more volume in the lever reservoir to the Code RSC, ensuring peak performance for the full run.",
+    "/images/product/scrsc.webp",
+    [
+      "2-piece caliper construction with 4 phenolic plastic pistons",
+      "Forged aluminum lever with bearing pivot and contact adjust",
+      "SwingLink and Lever Pivot Bearing technologies",
+      "Incredible heat management for massive power and predictable modulation",
+    ],
+
+    250,
+    ["COMPONENT"],
+    "TREK"
+  ),
 ];
 console.log(products);
