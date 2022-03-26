@@ -369,7 +369,7 @@
 .shop {
   margin: 0 auto;
   max-width: 90rem;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr 4.6fr;
   display: grid;
 }
 .shop sidebar {
@@ -458,7 +458,7 @@
 }
 .product-tag {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0.4rem 0;
 }
 .product-price {
