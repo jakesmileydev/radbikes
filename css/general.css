@@ -295,7 +295,7 @@ footer .a {
 .footer-copy {
   grid-column: 1 / 5;
   text-align: center;
-  padding-top: 6rem;
+  padding-top: 4rem;
 }
 .footer-copy p {
   margin-bottom: 0.4rem;
