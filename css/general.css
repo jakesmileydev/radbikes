@@ -70,7 +70,7 @@ header {
   width: 100%;
   background-color: white;
   z-index: 9999;
-  box-shadow: 2px 2px 8px rgba(78, 78, 78, 0.418);
+  box-shadow: 2px 2px 8px rgba(223, 223, 223, 0.418);
   top: 0;
 }
 .main-nav-wrapper {

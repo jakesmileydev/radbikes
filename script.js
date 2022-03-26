@@ -63,7 +63,6 @@ const slider = function () {
     e.key === "ArrowRight" && nextSlide();
   });
 };
-slider();
 
 const mobileFooterNav = function () {
   const footerMobileBtns = document.querySelectorAll(".footer-mobile-btn");
@@ -86,7 +85,6 @@ const mobileFooterNav = function () {
     });
   });
 };
-mobileFooterNav();
 
 const mobileNav = function () {
   document
@@ -100,7 +98,6 @@ const mobileNav = function () {
         .classList.toggle("main-nav-mobile-open");
     });
 };
-mobileNav();
 
 const formSubmit = function () {
   const form = document.querySelector(".cta-form");
@@ -109,24 +106,127 @@ const formSubmit = function () {
     form.innerHTML = "";
     const HTML = `
     <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-  </svg>
+      <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+      <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+    </svg>
     
     <p class="cta-confirm--text">Thanks, we'll be in touch</p>
     `;
     form.insertAdjacentHTML("afterbegin", HTML);
   });
 };
-formSubmit();
 
-// const navigate = function () {
-//   const location = window.location.hash.slice(1);
-//   if (!location) return;
-//   console.log(location);
-//   if (!location.includes("Shop")) return;
-//   document.querySelector("main").innerHTML = "";
-//   document.querySelector(".footer-image").style.backgroundColor = "#f1f1f1";
-// };
-// window.addEventListener("hashchange", navigate);
-// window.addEventListener("load", navigate);
+const setUpShop = function () {
+  document.querySelector("main").innerHTML = "";
+  document.querySelector(".footer-image").style.backgroundColor = "#f1f1f1";
+  document.querySelector("body").style.backgroundColor = "#f1f1f1";
+  let productHTML = "";
+  products.forEach((product) => {
+    productHTML += `
+    <div class="product">
+      <a href="#${product.id}" class="product-image-wrapper">
+        <img
+          class="product-image"
+          src="${product.image}"
+          alt="${product.name}"
+        />
+      </a>
+  
+      <div class="product-info">
+        <p class="product-name">${product.name}</p>
+        <p class="product-tag">${
+          product.tags.includes("FULLSUS")
+            ? "Full Suspension"
+            : product.tags.includes("EBIKE")
+            ? "Electric"
+            : product.tags.includes("HARDTAIL")
+            ? "Hardtail"
+            : product.tags.includes("GEAR")
+            ? "Gear"
+            : product.tags.includes("COMPONENT")
+            ? "Components"
+            : ""
+        }</p>
+        <p class="product-price">$ ${product.price.toLocaleString()}</p>
+      </div>
+    </div>
+    `;
+  });
+  const shopHTML = `
+  <section class="section--shop">
+  <div class="shop">
+    <sidebar>
+      <div class="breadcrumbs">
+        <p><a href="#Shop">SHOP</a></p>
+      </div>
+      <div class="filters">
+        <h4>COLLECTIONS</h4>
+        <ul class="filters--collections">
+          <li><a href="#Shop/Bikes">All Bikes</a></li>
+          <li>
+            <a href="#Shop/Bikes/FullSuspension">Full Suspension</a>
+          </li>
+          <li><a href="#Shop/Bikes/Hardtail">Hardtail</a></li>
+          <li><a href="#Shop/Gear">Gear</a></li>
+          <li><a href="#Shop/Components">Components</a></li>
+        </ul>
+        <h4>PRICE</h4>
+        <ul>
+          <li><button class="filter-btn">High to Low</button></li>
+          <li><button class="filter-btn">Low to High</button></li>
+        </ul>
+      </div>
+    </sidebar>
+    <div class="products">
+      ${productHTML}
+    </div>
+  </div>
+  `;
+  document.querySelector("main").insertAdjacentHTML("afterbegin", shopHTML);
+};
+
+const filterShop = function (e) {
+  if (!e.target.classList.contains("filter-btn")) return;
+  console.log(e.target.textContent);
+};
+
+const navigate = function () {
+  const location = window.location.hash.slice(1);
+  if (!location) return;
+
+  if (!location.includes("Shop")) return;
+  setUpShop();
+  scroll(0, 0);
+
+  const crumb = location.slice(5);
+  if (!crumb) return;
+
+  if (crumb === "Bikes") {
+    console.log("Show all bikes");
+  }
+  if (crumb === "Bikes/FullSuspension") {
+    console.log("Show Full Suspension Bikes only");
+  }
+  if (crumb === "Bikes/Hardtail") {
+    console.log("Show Hardtails only");
+  }
+  if (crumb === "Gear") {
+    console.log("Show Gear only");
+  }
+  if (crumb === "Components") {
+    console.log("Show Components only");
+  }
+};
+
+const initialize = function () {
+  slider();
+  mobileFooterNav();
+  mobileNav();
+  formSubmit();
+
+  document.querySelector("main").addEventListener("click", filterShop);
+  window.addEventListener("hashchange", navigate);
+  window.addEventListener("load", navigate);
+  console.log(products);
+};
+initialize();

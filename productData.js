@@ -11,6 +11,7 @@ class Product {
     this.brand = brand;
   }
 }
+
 const products = [
   new Product(
     "SJCA",
@@ -113,7 +114,7 @@ const products = [
     "RO6",
     "Roscoe 6",
     "Roscoe 6 is the ideal gateway to mountain biking for new riders looking to have a fun time on the trail.",
-    "/images/product/ro6",
+    "/images/product/ro6.jpg",
     [
       "TranzX JD-YSP18 seatpost is adjustable on the fly",
       "Shimano Deore M4100 10 speed shifter",
@@ -145,7 +146,7 @@ const products = [
     "FAR7",
     "Farley 7",
     "If you thought that fat bikes were sluggish, this one will change your mind",
-    "/images/product/far7",
+    "/images/product/far7.jpg",
     [
       "Horizontal sliding dropouts lets you fine-tune your geometry",
       "Bontrager Gnarwhal TLR tires",
@@ -327,4 +328,3 @@ const products = [
     "TREK"
   ),
 ];
-console.log(products);
