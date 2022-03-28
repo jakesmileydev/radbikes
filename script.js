@@ -204,7 +204,7 @@ const renderProducts = function (arr) {
     .querySelector(".products")
     .insertAdjacentHTML("afterbegin", productHTML);
 };
-// CRP = Current Rendered Products
+
 const getRenderedProducts = function () {
   return productData._getCurrentFilter()
     ? productData
@@ -306,6 +306,7 @@ const initialize = function () {
   ctaSubmit();
 
   document.querySelector("main").addEventListener("click", sortShop);
+
   window.addEventListener("hashchange", navigate);
   window.addEventListener("load", navigate);
 };
