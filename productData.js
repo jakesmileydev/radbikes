@@ -11,10 +11,26 @@ class Product {
     this.brand = brand;
   }
 }
+class Data {
+  #data;
+  #currentFilter;
+  _getData() {
+    return this.#data;
+  }
+  _setData(productArray) {
+    this.#data = productArray;
+  }
+  _setCurrentFilter(filter) {
+    this.#currentFilter = filter;
+  }
+  _getCurrentFilter() {
+    return this.#currentFilter;
+  }
+}
 
 const products = [
   new Product(
-    "SJCA",
+    "StumpjumperCompAlloy",
     "Stumpjumper Comp Alloy",
     "Metal fans rejoice! The Stumpjumper Comp Alloy rocks on, with one of the most advanced alloy frames ever developed.",
     "/images/product/sjca.jpg",
@@ -30,7 +46,7 @@ const products = [
   ),
 
   new Product(
-    "TLA",
+    "TurboLevoAlloy",
     "Turbo Levo Alloy",
     "The all-new Levo delivers the unbelievable power to ride more trails through an unequaled combination of ride quality, usable power, and ride anywhere range.",
     "/images/product/tla.jpg",
@@ -46,7 +62,7 @@ const products = [
   ),
 
   new Product(
-    "RH",
+    "Rockhopper",
     "Rockhopper",
     "Better performance. Better value.",
     "/images/product/rh.jpg",
@@ -62,7 +78,7 @@ const products = [
   ),
 
   new Product(
-    "SJEE",
+    "StumpjumperEvoExpert",
     "Stumpjumper Evo Expert",
     "Total control, unparalleled bump-eating suspension, and a fine-tunable geometry.",
     "/images/product/sjee.jpg",
@@ -78,7 +94,7 @@ const products = [
   ),
 
   new Product(
-    "FC29",
+    "FuseComp29",
     "Fuse Comp 29",
     "The Fuse Comp 29 punches way above its weight class thanks to a light-yet-burly M4 aluminum chassis.",
     "/images/product/fc29.jpg",
@@ -95,7 +111,7 @@ const products = [
   ),
 
   new Product(
-    "PF4",
+    "Powerfly4",
     "Powerfly 4",
     "Trek's most affordable electric mountain bike",
     "/images/product/pf4.jpg",
@@ -106,12 +122,12 @@ const products = [
       "Shimano Deore M4100 10 speed shifter",
     ],
     3850,
-    ["MTB", "EBIKE", "HARDTAIL"],
+    ["MTB", "ELECTRIC"],
     "TREK"
   ),
 
   new Product(
-    "RO6",
+    "Roscoe6",
     "Roscoe 6",
     "Roscoe 6 is the ideal gateway to mountain biking for new riders looking to have a fun time on the trail.",
     "/images/product/ro6.jpg",
@@ -127,7 +143,7 @@ const products = [
   ),
 
   new Product(
-    "FEX99",
+    "FuelEX",
     "Fuel EX 9.9 XTR",
     "Fuel EX 9.9 makes no compromises. Top-shelf suspension, carbon everything, and a super-smooth Shimano XTR drivetrain",
     "/images/product/fex99.jpg",
@@ -143,7 +159,7 @@ const products = [
   ),
 
   new Product(
-    "FAR7",
+    "Farley7",
     "Farley 7",
     "If you thought that fat bikes were sluggish, this one will change your mind",
     "/images/product/far7.jpg",
@@ -159,7 +175,7 @@ const products = [
   ),
 
   new Product(
-    "ECAL96",
+    "ECaliber",
     "E-Caliber 9.6",
     "E-Caliber 9.6 is a carbon electric mountain bike that rides and looks like a traditional cross country bike",
     "/images/product/ecal96.jpg",
@@ -175,7 +191,7 @@ const products = [
   ),
 
   new Product(
-    "DTH",
+    "DefendThermoHoodie",
     "Defend Thermo Hoodie",
     "Insulated, sweat-wicking hoodie for cold rides",
     "/images/product/dth.webp",
@@ -190,7 +206,7 @@ const products = [
     "FOX"
   ),
   new Product(
-    "SFPRO",
+    "SpeedframeProFade",
     "Speedframe Pro Fade Helmet",
     "Performance focused open-face MTB helmet",
     "/images/product/sfpro.webp",
@@ -206,7 +222,7 @@ const products = [
   ),
 
   new Product(
-    "RAMPRO",
+    "RampageProCarbon",
     "Rampage Pro Carbon Mips Helmet",
     "The MTB helmet trusted by UCI world cup champions",
     "/images/product/rampro.webp",
@@ -221,7 +237,7 @@ const products = [
     "FOX"
   ),
   new Product(
-    "VSGOG",
+    "VueStray",
     "Vue Stray Goggles",
     "See more with pro-level Vue goggle",
     "/images/product/vsgog.webp",
@@ -236,7 +252,7 @@ const products = [
     "FOX"
   ),
   new Product(
-    "DFG",
+    "DefendFire",
     "Defend Fire Gloves",
     "Water resistant cold weather MTB gloves with D30® armor",
     "/images/product/dfg.webp",
@@ -251,7 +267,7 @@ const products = [
     "FOX"
   ),
   new Product(
-    "ROVTERSP",
+    "RovalTerra",
     "Roval Terra Seatpost",
     "The Roval Terra seatpost is the best choice for riding mixed terrain, gravel, or rough roads because it smooths the ride by allowing significant vertical compliance.",
     "images/product/rovtersp.jpg",
@@ -262,11 +278,11 @@ const products = [
       "Lightweight - 194 grams (27.2 x 330mm x 0)",
     ],
     250,
-    ["COMPONENT"],
+    ["COMPONENTS"],
     "SPECIALIZED"
   ),
   new Product(
-    "SUPAEP",
+    "Supacaz",
     "Supacaz ePedal - CNC Alloy",
     "Compact cartridge bushings paired with a sealed bearing system keep things running smoothly for miles and miles…",
     "/images/product/supaep.jpg",
@@ -278,7 +294,7 @@ const products = [
       "Dimensions: 11 x 20 x 7 cm",
     ],
     165,
-    ["COMPONENT"],
+    ["COMPONENTS"],
     "SPECIALIZED"
   ),
   new Product(
@@ -293,11 +309,11 @@ const products = [
       "Full diameter spring retainer with wire ring (like DHX2)",
     ],
     560,
-    ["COMPONENT"],
+    ["COMPONENTS"],
     "FOX"
   ),
   new Product(
-    "TFC",
+    "TopFuelC",
     "Top Fuel C Frameset",
     "Top Fuel C is a carbon full suspension frameset made for a super-fast and fun down-county build",
     "/images/product/tfc.webp",
@@ -308,11 +324,11 @@ const products = [
       "Bontrager Elite 35mm stem,",
     ],
     3720,
-    ["COMPONENT"],
+    ["COMPONENTS"],
     "TREK"
   ),
   new Product(
-    "SCRSC",
+    "SRAMBrakeLever",
     "SRAM Code RSC HYD Brake Lever/Caliper",
     "SRAM added 15% extra piston power and 30% more volume in the lever reservoir to the Code RSC, ensuring peak performance for the full run.",
     "/images/product/scrsc.webp",
@@ -324,7 +340,11 @@ const products = [
     ],
 
     250,
-    ["COMPONENT"],
+    ["COMPONENTS"],
     "TREK"
   ),
 ];
+
+const productData = new Data();
+productData._setData(products);
+// console.log(data._getData());

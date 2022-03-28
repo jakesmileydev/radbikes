@@ -8,15 +8,12 @@ const slider = function () {
   let curSlide = 0;
   const maxSlide = slides.length;
 
-  // Functions
-
   const goToSlide = function (slide) {
     slides.forEach(
       (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
     );
   };
 
-  // Next slide
   const nextSlide = function () {
     const width = document.body.clientWidth;
     if (curSlide === 0) {
@@ -49,10 +46,7 @@ const slider = function () {
     goToSlide(curSlide);
   };
 
-  const init = function () {
-    goToSlide(0);
-  };
-  init();
+  goToSlide(0);
 
   // Event handlers
   btnRight.addEventListener("click", nextSlide);
@@ -99,7 +93,7 @@ const mobileNav = function () {
     });
 };
 
-const formSubmit = function () {
+const ctaSubmit = function () {
   const form = document.querySelector(".cta-form");
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -120,8 +114,62 @@ const setUpShop = function () {
   document.querySelector("main").innerHTML = "";
   document.querySelector(".footer-image").style.backgroundColor = "#f1f1f1";
   document.querySelector("body").style.backgroundColor = "#f1f1f1";
+
+  const sidebarHTML = `
+  <section class="section--shop">
+  <div class="shop">
+    
+    <div class="breadcrumbs">
+      <p class="breadcrumbs-links"><a href="#Shop"  >SHOP</a></p>
+    </div>
+
+    <form class="search-bar">
+      <input class="search-input" type="text">
+      <button class="search-btn">Search</button>
+    </form>
+    
+    
+    <sidebar>
+    
+      <div class="filters">
+        <h4>COLLECTIONS</h4>
+        <ul class="filters--collections">
+          <li><a href="#Shop/Bikes">All Bikes</a></li>
+          <li>
+            <a href="#Shop/Bikes/FullSuspension">Full Suspension</a>
+          </li>
+          <li><a href="#Shop/Bikes/Hardtail">Hardtail</a></li>
+          <li><a href="#Shop/Bikes/Electric">Electric</a></li>
+          <li><a href="#Shop/Gear">Gear</a></li>
+          <li><a href="#Shop/Components">Components</a></li>
+        </ul>
+        <h4>PRICE</h4>
+        <ul>
+          <li><button data-sort="HIGH" class="sort-btn">High to Low</button></li>
+          <li><button data-sort="LOW" class="sort-btn">Low to High</button></li>
+        </ul>
+      
+    </div>
+    </sidebar>
+    <div class="products">
+      
+    </div>
+  </div>
+  `;
+  document.querySelector("main").insertAdjacentHTML("afterbegin", sidebarHTML);
+  document
+    .querySelector(".search-bar")
+    .addEventListener("submit", searchProducts);
+};
+const searchProducts = function (e) {
+  e.preventDefault();
+  const searchTerm = document.querySelector(".search-input").value;
+};
+const renderProducts = function (arr) {
+  document.querySelector(".products").innerHTML = "";
+
   let productHTML = "";
-  products.forEach((product) => {
+  arr.forEach((product) => {
     productHTML += `
     <div class="product">
       <a href="#${product.id}" class="product-image-wrapper">
@@ -137,7 +185,7 @@ const setUpShop = function () {
         <p class="product-tag">${
           product.tags.includes("FULLSUS")
             ? "Full Suspension"
-            : product.tags.includes("EBIKE")
+            : product.tags.includes("ELECTRIC")
             ? "Electric"
             : product.tags.includes("HARDTAIL")
             ? "Hardtail"
@@ -152,42 +200,39 @@ const setUpShop = function () {
     </div>
     `;
   });
-  const shopHTML = `
-  <section class="section--shop">
-  <div class="shop">
-    <sidebar>
-      <div class="breadcrumbs">
-        <p><a href="#Shop">SHOP</a></p>
-      </div>
-      <div class="filters">
-        <h4>COLLECTIONS</h4>
-        <ul class="filters--collections">
-          <li><a href="#Shop/Bikes">All Bikes</a></li>
-          <li>
-            <a href="#Shop/Bikes/FullSuspension">Full Suspension</a>
-          </li>
-          <li><a href="#Shop/Bikes/Hardtail">Hardtail</a></li>
-          <li><a href="#Shop/Gear">Gear</a></li>
-          <li><a href="#Shop/Components">Components</a></li>
-        </ul>
-        <h4>PRICE</h4>
-        <ul>
-          <li><button class="filter-btn">High to Low</button></li>
-          <li><button class="filter-btn">Low to High</button></li>
-        </ul>
-      </div>
-    </sidebar>
-    <div class="products">
-      ${productHTML}
-    </div>
-  </div>
-  `;
-  document.querySelector("main").insertAdjacentHTML("afterbegin", shopHTML);
+  document
+    .querySelector(".products")
+    .insertAdjacentHTML("afterbegin", productHTML);
+};
+// CRP = Current Rendered Products
+const getRenderedProducts = function () {
+  return productData._getCurrentFilter()
+    ? productData
+        ._getData()
+        .filter((product) =>
+          product.tags.includes(productData._getCurrentFilter())
+        )
+    : productData._getData();
 };
 
-const filterShop = function (e) {
-  if (!e.target.classList.contains("filter-btn")) return;
-  console.log(e.target.textContent);
+const sortShop = function (e) {
+  if (!e.target.classList.contains("sort-btn")) return;
+  if (e.target.dataset.sort === "LOW") {
+    const sortedLow = getRenderedProducts();
+    sortedLow.sort((x, y) => x.price - y.price);
+    renderProducts(sortedLow);
+  }
+  if (e.target.dataset.sort === "HIGH") {
+    const sortedHigh = getRenderedProducts();
+    sortedHigh.sort((x, y) => y.price - x.price);
+    renderProducts(sortedHigh);
+  }
+};
+
+const displayBreadcrumbs = function (crumb) {
+  document
+    .querySelector(".breadcrumbs-links")
+    .insertAdjacentHTML("beforeend", crumb);
 };
 
 const navigate = function () {
@@ -199,22 +244,58 @@ const navigate = function () {
   scroll(0, 0);
 
   const crumb = location.slice(5);
-  if (!crumb) return;
+  if (!crumb) {
+    renderProducts(productData._getData());
+    productData._setCurrentFilter("");
+  }
 
   if (crumb === "Bikes") {
-    console.log("Show all bikes");
+    const bikes = productData
+      ._getData()
+      .filter((product) => product.tags.includes("MTB"));
+    productData._setCurrentFilter("MTB");
+    renderProducts(bikes);
+    displayBreadcrumbs(` / <a href="#Shop/Bikes">BIKES</a>`);
   }
   if (crumb === "Bikes/FullSuspension") {
-    console.log("Show Full Suspension Bikes only");
+    const fullSuspension = productData
+      ._getData()
+      .filter((product) => product.tags.includes("FULLSUS"));
+    productData._setCurrentFilter("FULLSUS");
+    displayBreadcrumbs(` / <a href="#Shop/Bikes">BIKES</a> / FULL SUSPENSION`);
+    renderProducts(fullSuspension);
   }
   if (crumb === "Bikes/Hardtail") {
-    console.log("Show Hardtails only");
+    const hardtail = productData
+      ._getData()
+      .filter((product) => product.tags.includes("HARDTAIL"));
+    productData._setCurrentFilter("HARDTAIL");
+    displayBreadcrumbs(` / <a href="#Shop/Bikes">BIKES</a> / HARDTAIL`);
+    renderProducts(hardtail);
+  }
+  if (crumb === "Bikes/Electric") {
+    const electric = productData
+      ._getData()
+      .filter((product) => product.tags.includes("ELECTRIC"));
+    productData._setCurrentFilter("ELECTRIC");
+    displayBreadcrumbs(` / <a href="#Shop/Bikes">BIKES</a> / ELECTRIC`);
+    renderProducts(electric);
   }
   if (crumb === "Gear") {
-    console.log("Show Gear only");
+    const gear = productData
+      ._getData()
+      .filter((product) => product.tags.includes("GEAR"));
+    productData._setCurrentFilter("GEAR");
+    displayBreadcrumbs(" / GEAR");
+    renderProducts(gear);
   }
   if (crumb === "Components") {
-    console.log("Show Components only");
+    const components = productData
+      ._getData()
+      .filter((product) => product.tags.includes("COMPONENTS"));
+    productData._setCurrentFilter("COMPONENTS");
+    displayBreadcrumbs(" / COMPONENTS");
+    renderProducts(components);
   }
 };
 
@@ -222,11 +303,10 @@ const initialize = function () {
   slider();
   mobileFooterNav();
   mobileNav();
-  formSubmit();
+  ctaSubmit();
 
-  document.querySelector("main").addEventListener("click", filterShop);
+  document.querySelector("main").addEventListener("click", sortShop);
   window.addEventListener("hashchange", navigate);
   window.addEventListener("load", navigate);
-  console.log(products);
 };
 initialize();
