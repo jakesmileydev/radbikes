@@ -124,7 +124,7 @@ const setUpShop = function () {
     </div>
 
     <form class="search-bar">
-      <input class="search-input" type="text">
+      <input class="search-input" type="text" placeholder="Search products, categories, features, brands...">
       <button class="search-btn">Search</button>
     </form>
     
@@ -163,8 +163,31 @@ const setUpShop = function () {
 };
 const searchProducts = function (e) {
   e.preventDefault();
+  let searchArr = [];
   const searchTerm = document.querySelector(".search-input").value;
+  productData._getData().forEach((product) => {
+    let searchableString = "";
+    searchableString +=
+      product.name + product.tags + product.features + product.brand;
+    searchableString = searchableString.toUpperCase();
+
+    if (searchableString.includes(searchTerm.toUpperCase())) {
+      searchArr.push(product);
+    }
+  });
+  document.querySelector(".products").innerHTML = "";
+  if (searchArr.length === 0) {
+    document
+      .querySelector(".products")
+      .insertAdjacentHTML(
+        "afterbegin",
+        `Sorry, no results found for '${searchTerm}', Please try again.`
+      );
+    return;
+  }
+  renderProducts(searchArr);
 };
+
 const renderProducts = function (arr) {
   document.querySelector(".products").innerHTML = "";
 
@@ -183,15 +206,20 @@ const renderProducts = function (arr) {
       <div class="product-info">
         <p class="product-name">${product.name}</p>
         <p class="product-tag">${
-          product.tags.includes("FULLSUS")
-            ? "Full Suspension"
+          product.tags.includes("ELECTRIC") && product.tags.includes("FULLSUS")
+            ? "Electric | Full Suspension"
+            : product.tags.includes("ELECTRIC") &&
+              product.tags.includes("HARDTAIL")
+            ? "Electric | Hardtail"
             : product.tags.includes("ELECTRIC")
             ? "Electric"
+            : product.tags.includes("FULLSUS")
+            ? "Full Suspension"
             : product.tags.includes("HARDTAIL")
             ? "Hardtail"
             : product.tags.includes("GEAR")
             ? "Gear"
-            : product.tags.includes("COMPONENT")
+            : product.tags.includes("COMPONENTS")
             ? "Components"
             : ""
         }</p>

@@ -41,7 +41,7 @@ const products = [
       "X-Fusion Manic seatpost",
     ],
     3600,
-    ["MTB", "FULLSUS"],
+    ["MTB", "FULLSUS", "BIKES"],
     "SPECIALIZED"
   ),
 
@@ -57,7 +57,7 @@ const products = [
       "RockShox Deluxe Select R",
     ],
     5500,
-    ["MTB", "EBIKE", "FULLSUS"],
+    ["MTB", "ELECTRIC", "FULLSUS", "BIKES"],
     "SPECIALIZED"
   ),
 
@@ -73,7 +73,7 @@ const products = [
       "KMC X8 EPT chain with anti-rust coating",
     ],
     700,
-    ["MTB", "HARDTAIL"],
+    ["MTB", "HARDTAIL", "BIKES"],
     "SPECIALIZED"
   ),
 
@@ -89,7 +89,7 @@ const products = [
       "Sram X01 Eagle 12-speed derailleur",
     ],
     6300,
-    ["MTB", "FULLSUS"],
+    ["MTB", "FULLSUS", "BIKES"],
     "SPECIALIZED"
   ),
 
@@ -106,7 +106,7 @@ const products = [
       "SRAM NX Eagles drivetrain",
     ],
     2300,
-    ["MTB", "HARDTAIL"],
+    ["MTB", "HARDTAIL", "BIKES"],
     "SPECIALIZED"
   ),
 
@@ -122,7 +122,7 @@ const products = [
       "Shimano Deore M4100 10 speed shifter",
     ],
     3850,
-    ["MTB", "ELECTRIC"],
+    ["MTB", "ELECTRIC", "HARDTAIL", "BIKES"],
     "TREK"
   ),
 
@@ -138,7 +138,7 @@ const products = [
       "Shimano MT200 hydraulic disc brakes",
     ],
     1180,
-    ["MTB", "HARDTAIL"],
+    ["MTB", "HARDTAIL", "BIKES"],
     "TREK"
   ),
 
@@ -154,7 +154,7 @@ const products = [
       "Fox Factory Float EVOL shocks with Thru Shaft 3-position damper",
     ],
     9550,
-    ["MTB", "FULLSUS"],
+    ["MTB", "FULLSUS", "BIKES"],
     "TREK"
   ),
 
@@ -170,7 +170,7 @@ const products = [
       "SRAM NX/GX Eagle 1x12 drivetrain",
     ],
     2850,
-    ["MTB", "HARDTAIL"],
+    ["MTB", "HARDTAIL", "BIKES"],
     "TREK"
   ),
 
@@ -186,7 +186,7 @@ const products = [
       "	Shimano Deore M6100 12 speed shifter",
     ],
     6650,
-    ["MTB", "FULLSUS", "EBIKE"],
+    ["MTB", "ELECTRIC", "FULLSUS", "BIKES"],
     "TREK"
   ),
 

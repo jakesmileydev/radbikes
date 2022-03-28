@@ -226,7 +226,7 @@ footer img {
   grid-template-columns: 1.6fr 1fr 1fr 1fr;
   position: relative;
   font-size: 1rem;
-  padding: 2rem 6rem 4rem 6rem;
+  padding: 0 6rem 1.6rem 6rem;
   max-width: 90rem;
   margin: 0 auto;
 }

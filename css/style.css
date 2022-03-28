@@ -387,6 +387,7 @@
 .search-input {
   padding: 0.25rem;
   font-size: 1rem;
+  width: 50%;
 }
 .search-btn {
   padding: 0.4rem 1rem;
@@ -409,7 +410,7 @@
   font-size: 1rem;
 }
 .filters li {
-  padding-top: 0.4rem;
+  padding-top: 0.6rem;
 }
 .filters a:hover,
 .filters a:active {
