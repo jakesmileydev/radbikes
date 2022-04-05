@@ -134,19 +134,41 @@ const setUpShop = function () {
       <div class="filters">
         <h4>COLLECTIONS</h4>
         <ul class="filters--collections">
-          <li><a href="#Shop/Bikes">All Bikes</a></li>
-          <li>
-            <a href="#Shop/Bikes/FullSuspension">Full Suspension</a>
+          <li class="filter--bikes">
+            <a href="#Shop/Bikes">All Bikes</a>
+            <i class="ph-check filter-check"></i>
           </li>
-          <li><a href="#Shop/Bikes/Hardtail">Hardtail</a></li>
-          <li><a href="#Shop/Bikes/Electric">Electric</a></li>
-          <li><a href="#Shop/Gear">Gear</a></li>
-          <li><a href="#Shop/Components">Components</a></li>
+          <li class="filter--fullsus">
+            <a href="#Shop/Bikes/FullSuspension">Full Suspension</a>
+            <i class="ph-check filter-check"></i>
+          </li>
+          <li class="filter--hardtail">
+            <a href="#Shop/Bikes/Hardtail">Hardtail</a>
+            <i class="ph-check filter-check"></i>
+          </li>
+          <li class="filter--electric">
+            <a href="#Shop/Bikes/Electric">Electric</a>
+            <i class="ph-check filter-check"></i>
+          </li>
+          <li class="filter--gear">
+            <a href="#Shop/Gear">Gear</a>
+            <i class="ph-check filter-check"></i>
+          </li>
+          <li class="filter--components">
+            <a href="#Shop/Components">Components</a>
+            <i class="ph-check filter-check"></i>
+          </li>
         </ul>
         <h4>PRICE</h4>
         <ul>
-          <li><button data-sort="HIGH" class="sort-btn">High to Low</button></li>
-          <li><button data-sort="LOW" class="sort-btn">Low to High</button></li>
+          <li>
+            <button data-sort="HIGH" class="sort-btn">High to Low</button>
+            <i class="ph-check sort-filter-check"></i>
+          </li>
+          <li>
+            <button data-sort="LOW" class="sort-btn">Low to High</button>
+            <i class="ph-check sort-filter-check"></i>
+          </li>
         </ul>
       
     </div>
@@ -161,8 +183,17 @@ const setUpShop = function () {
     .querySelector(".search-bar")
     .addEventListener("submit", searchProducts);
 };
+
+const resetShop = function () {
+  document.querySelector(".breadcrumbs-links").innerHTML =
+    '<a href="#Shop">SHOP</a>';
+  productData._setCurrentFilter("");
+};
 const searchProducts = function (e) {
   e.preventDefault();
+  clearCollectionSortDisplay();
+  clearPriceSortDisplay();
+  resetShop();
   let searchArr = [];
   const searchTerm = document.querySelector(".search-input").value;
   productData._getData().forEach((product) => {
@@ -185,6 +216,7 @@ const searchProducts = function (e) {
       );
     return;
   }
+  productData._setCurrentSearch(searchArr);
   renderProducts(searchArr);
 };
 
@@ -240,11 +272,40 @@ const getRenderedProducts = function () {
         .filter((product) =>
           product.tags.includes(productData._getCurrentFilter())
         )
-    : productData._getData();
+    : productData._getCurrentSearch() ?? productData._getData();
 };
 
+const clearPriceSortDisplay = function (e) {
+  const sortBtns = Array.from(document.querySelectorAll(".sort-btn"));
+  sortBtns.forEach((btn) => btn.classList.remove("filter--selected"));
+  const sortBtnChecks = Array.from(
+    document.querySelectorAll(".sort-filter-check")
+  );
+  sortBtnChecks.forEach((check) =>
+    check.classList.remove("filter-check--selected")
+  );
+};
+
+const clearCollectionSortDisplay = function () {
+  const selectedFilters = Array.from(
+    document.querySelectorAll(".filter--selected")
+  );
+  selectedFilters.forEach((filter) =>
+    filter.classList.remove("filter--selected")
+  );
+  const filterChecks = Array.from(document.querySelectorAll(".filter-check"));
+  filterChecks.forEach((check) =>
+    check.classList.remove("filter-check--selected")
+  );
+};
 const sortShop = function (e) {
   if (!e.target.classList.contains("sort-btn")) return;
+  clearPriceSortDisplay(e);
+  e.target
+    .closest("li")
+    .querySelector(".sort-filter-check")
+    .classList.add("filter-check--selected");
+  e.target.classList.add("filter--selected");
   if (e.target.dataset.sort === "LOW") {
     const sortedLow = getRenderedProducts();
     sortedLow.sort((x, y) => x.price - y.price);
@@ -262,6 +323,16 @@ const displayBreadcrumbs = function (crumb) {
     .querySelector(".breadcrumbs-links")
     .insertAdjacentHTML("beforeend", crumb);
 };
+const displaySelectedFilter = function (filter) {
+  document
+    .querySelector(filter)
+    .querySelector("a")
+    .classList.add("filter--selected");
+  document
+    .querySelector(filter)
+    .querySelector("i")
+    .classList.add("filter-check--selected");
+};
 
 const navigate = function () {
   const location = window.location.hash.slice(1);
@@ -270,6 +341,8 @@ const navigate = function () {
   if (!location.includes("Shop")) return;
   setUpShop();
   scroll(0, 0);
+
+  clearCollectionSortDisplay();
 
   const crumb = location.slice(5);
   if (!crumb) {
@@ -284,6 +357,7 @@ const navigate = function () {
     productData._setCurrentFilter("MTB");
     renderProducts(bikes);
     displayBreadcrumbs(` / <a href="#Shop/Bikes">BIKES</a>`);
+    displaySelectedFilter(".filter--bikes");
   }
   if (crumb === "Bikes/FullSuspension") {
     const fullSuspension = productData
@@ -292,6 +366,7 @@ const navigate = function () {
     productData._setCurrentFilter("FULLSUS");
     displayBreadcrumbs(` / <a href="#Shop/Bikes">BIKES</a> / FULL SUSPENSION`);
     renderProducts(fullSuspension);
+    displaySelectedFilter(".filter--fullsus");
   }
   if (crumb === "Bikes/Hardtail") {
     const hardtail = productData
@@ -300,6 +375,7 @@ const navigate = function () {
     productData._setCurrentFilter("HARDTAIL");
     displayBreadcrumbs(` / <a href="#Shop/Bikes">BIKES</a> / HARDTAIL`);
     renderProducts(hardtail);
+    displaySelectedFilter(".filter--hardtail");
   }
   if (crumb === "Bikes/Electric") {
     const electric = productData
@@ -308,6 +384,7 @@ const navigate = function () {
     productData._setCurrentFilter("ELECTRIC");
     displayBreadcrumbs(` / <a href="#Shop/Bikes">BIKES</a> / ELECTRIC`);
     renderProducts(electric);
+    displaySelectedFilter(".filter--electric");
   }
   if (crumb === "Gear") {
     const gear = productData
@@ -316,6 +393,7 @@ const navigate = function () {
     productData._setCurrentFilter("GEAR");
     displayBreadcrumbs(" / GEAR");
     renderProducts(gear);
+    displaySelectedFilter(".filter--gear");
   }
   if (crumb === "Components") {
     const components = productData
@@ -324,6 +402,7 @@ const navigate = function () {
     productData._setCurrentFilter("COMPONENTS");
     displayBreadcrumbs(" / COMPONENTS");
     renderProducts(components);
+    displaySelectedFilter(".filter--components");
   }
 };
 

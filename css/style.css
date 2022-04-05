@@ -386,7 +386,7 @@
 }
 .search-input {
   padding: 0.25rem;
-  font-size: 1rem;
+  font-size: 1.2rem;
   width: 50%;
 }
 .search-btn {
@@ -396,7 +396,7 @@
   padding: 2rem 0 2rem 2rem;
 }
 .shop > * {
-  color: rgb(93, 93, 93);
+  /* color: rgb(93, 93, 93); */
   font-family: "roboto", sans-serif;
 }
 .breadcrumbs {
@@ -418,6 +418,25 @@
 }
 .filters--collections {
   margin-bottom: 4rem;
+  color: #5d5d5d;
+}
+.filters li {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.3rem;
+}
+.filter-check,
+.sort-filter-check {
+  font-size: 1.6rem;
+  color: black;
+
+  visibility: hidden;
+}
+.filter-check--selected {
+  visibility: visible;
+}
+.filters .filter--selected {
+  color: black;
 }
 .sort-btn {
   background: none;

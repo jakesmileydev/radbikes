@@ -53,6 +53,9 @@
   .collections {
     grid-template-columns: 1fr 1fr;
   }
+  .collection-title {
+    padding-top: 2rem;
+  }
   /* Brands */
   .trek,
   .kona {
@@ -201,7 +204,7 @@
   .footer-inner {
     display: flex;
     flex-direction: column;
-    padding: 0 4rem 8rem 4rem;
+    padding: 0 4rem 2rem 4rem;
     background-color: black;
   }
   .column {
@@ -266,17 +269,12 @@
   .slider {
     height: 44rem;
   }
-  .footer-inner {
-    padding-bottom: 10rem;
-  }
 }
 @media (max-width: 31em) {
   footer::before {
     height: 9rem;
   }
-  .footer-inner {
-    padding-bottom: 14rem;
-  }
+
   .hero-text {
     padding: 0 2rem;
   }

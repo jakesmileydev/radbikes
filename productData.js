@@ -14,17 +14,24 @@ class Product {
 class Data {
   #data;
   #currentFilter;
+  #currentSearch;
   _getData() {
     return this.#data;
   }
   _setData(productArray) {
     this.#data = productArray;
   }
+  _getCurrentFilter() {
+    return this.#currentFilter;
+  }
   _setCurrentFilter(filter) {
     this.#currentFilter = filter;
   }
-  _getCurrentFilter() {
-    return this.#currentFilter;
+  _getCurrentSearch() {
+    return this.#currentSearch;
+  }
+  _setCurrentSearch(searchArray) {
+    this.#currentSearch = searchArray;
   }
 }
 
