@@ -336,9 +336,48 @@ const displaySelectedFilter = function (filter) {
 
 const renderProductPage = function (id) {
   document.querySelector("main").innerHTML = "";
-  document.querySelector(".footer-image").style.backgroundColor = "#f1f1f1";
-  document.querySelector("body").style.backgroundColor = "#f1f1f1";
-  console.log(id);
+  document.querySelector(".footer-image").style.backgroundColor = "#fff";
+  document.querySelector("body").style.backgroundColor = "#fff";
+  const thisProduct = productData
+    ._getData()
+    .find((product) => product.id === id);
+  console.log(thisProduct);
+  const productPageHTML = `
+    <section class="section--product-page">
+        <img
+          class="product-page-image"
+          src="${thisProduct.image}"
+          alt="${thisProduct.name}"
+        />
+
+        <div class="product-page-info">
+          <h3 class="product-page-name">${thisProduct.name}</h3>
+          <p class="product-page-price">$ ${thisProduct.price.toLocaleString()}</p>
+          <p class="product-page-phrase">
+            ${thisProduct.phrase}
+          </p>
+          <button class="product-page-add">ADD TO CART</button>
+          <ul class="product-page-features">
+            <li>${thisProduct.features[0]}</li>
+            <li>${thisProduct.features[1]}</li>
+            <li>${thisProduct.features[2]}</li>
+            <li>${thisProduct.features[3]}</li>
+          </ul>
+        </div>
+
+        <div class="product-page-icons">
+          <i class="ph-shield-check"></i>
+          <p>SECURE CHECKOUT</p>
+          <i class="ph-rocket-launch"></i>
+          <p>FAST SHIPPING</p>
+          <i class="ph-medal"></i>
+          <p>SATISFACTION GUARANTEED</p>
+        </div>
+      </section>
+  `;
+  document
+    .querySelector("main")
+    .insertAdjacentHTML("afterbegin", productPageHTML);
 };
 const navigate = function () {
   const location = window.location.hash.slice(1);
