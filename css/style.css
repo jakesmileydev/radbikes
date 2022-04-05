@@ -459,6 +459,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   gap: 1rem;
   padding: 2rem;
+  font-size: 1.4rem;
 }
 
 .product {

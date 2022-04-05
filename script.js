@@ -227,7 +227,7 @@ const renderProducts = function (arr) {
   arr.forEach((product) => {
     productHTML += `
     <div class="product">
-      <a href="#${product.id}" class="product-image-wrapper">
+      <a href="#Product/${product.id}" class="product-image-wrapper">
         <img
           class="product-image"
           src="${product.image}"
@@ -334,10 +334,22 @@ const displaySelectedFilter = function (filter) {
     .classList.add("filter-check--selected");
 };
 
+const renderProductPage = function (id) {
+  document.querySelector("main").innerHTML = "";
+  document.querySelector(".footer-image").style.backgroundColor = "#f1f1f1";
+  document.querySelector("body").style.backgroundColor = "#f1f1f1";
+  console.log(id);
+};
 const navigate = function () {
   const location = window.location.hash.slice(1);
   if (!location) return;
-
+  if (location.slice(0, 7) === "Product") {
+    return renderProductPage(location.slice(8));
+  }
+  document.querySelector(".main-nav").classList.remove("main-nav-mobile-open");
+  document
+    .querySelector(".mobile-nav-btn")
+    .classList.remove("mobile-nav-btn--open");
   if (!location.includes("Shop")) return;
   setUpShop();
   scroll(0, 0);
@@ -345,6 +357,7 @@ const navigate = function () {
   clearCollectionSortDisplay();
 
   const crumb = location.slice(5);
+
   if (!crumb) {
     renderProducts(productData._getData());
     productData._setCurrentFilter("");
