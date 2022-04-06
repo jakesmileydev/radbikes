@@ -338,6 +338,7 @@ const renderProductPage = function (id) {
   document.querySelector("main").innerHTML = "";
   document.querySelector(".footer-image").style.backgroundColor = "#fff";
   document.querySelector("body").style.backgroundColor = "#fff";
+  scrollTo(0, 0);
   const thisProduct = productData
     ._getData()
     .find((product) => product.id === id);
@@ -363,15 +364,23 @@ const renderProductPage = function (id) {
             <li>${thisProduct.features[2]}</li>
             <li>${thisProduct.features[3]}</li>
           </ul>
+          
         </div>
 
         <div class="product-page-icons">
-          <i class="ph-shield-check"></i>
-          <p>SECURE CHECKOUT</p>
-          <i class="ph-rocket-launch"></i>
-          <p>FAST SHIPPING</p>
-          <i class="ph-medal"></i>
-          <p>SATISFACTION GUARANTEED</p>
+          <div class="product-page-icons-container">
+            <i class="ph-shield-check"></i>
+            <p>SECURE CHECKOUT</p>
+          </div>
+          <div class="product-page-icons-container">
+            <i class="ph-rocket-launch"></i>
+            <p>FAST SHIPPING</p>
+          </div>
+          <div class="product-page-icons-container">
+            <i class="ph-medal"></i>
+            <p>SATISFACTION GUARANTEED</p>
+          </div>
+          
         </div>
       </section>
   `;

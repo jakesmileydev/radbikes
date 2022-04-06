@@ -21,7 +21,8 @@
     font-size: 80%;
   }
   .section--hero,
-  .section--shop {
+  .section--shop,
+  .section--product-page {
     margin-top: 56.31px;
   }
   .footer-copy {
@@ -140,7 +141,8 @@
   }
 
   header .logo {
-    left: 43%;
+    left: 50%;
+    transform: translate(-50%);
   }
   /* ///////////////////////// */
   /*  Hero */
@@ -261,6 +263,17 @@
   .column li {
     padding-bottom: 1.4rem;
   }
+  /* product page */
+  .section--product-page {
+    display: flex;
+    flex-direction: column;
+  }
+  .product-page-image {
+    padding: 0 4rem;
+  }
+  .product-page-info {
+    padding: 4rem;
+  }
 }
 
 @media (max-width: 41em) {
@@ -304,6 +317,7 @@
     gap: 1.2rem;
     margin-bottom: 2rem;
   }
+  /* product page */
 }
 @media (max-width: 31em) {
   footer::before {
@@ -329,5 +343,14 @@
   .section--cta {
     margin-left: 0.2rem;
     margin-right: 0.2rem;
+  }
+  .product-page-image {
+    padding: 0 2rem;
+  }
+  .product-page-info {
+    padding: 4rem 2rem;
+  }
+  .product-page-icons {
+    padding: 0 4rem 2rem 4rem;
   }
 }
