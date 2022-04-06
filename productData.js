@@ -120,7 +120,7 @@ const products = [
   new Product(
     "Powerfly4",
     "Powerfly 4",
-    "Trek's most affordable electric mountain bike",
+    "Trek's most affordable electric mountain bike.",
     "/images/product/pf4.jpg",
     [
       "Bosch Performance CX (250W, 75Nm) motor",
@@ -152,7 +152,7 @@ const products = [
   new Product(
     "FuelEX",
     "Fuel EX 9.9 XTR",
-    "Fuel EX 9.9 makes no compromises. Top-shelf suspension, carbon everything, and a super-smooth Shimano XTR drivetrain",
+    "Fuel EX 9.9 makes no compromises. Top-shelf suspension, carbon everything, and a super-smooth Shimano XTR drivetrain.",
     "/images/product/fex99.jpg",
     [
       "OCLV Mountain Carbon frame with internal storage",
@@ -168,7 +168,7 @@ const products = [
   new Product(
     "Farley7",
     "Farley 7",
-    "If you thought that fat bikes were sluggish, this one will change your mind",
+    "If you thought that fat bikes were sluggish, this one will change your mind.",
     "/images/product/far7.jpg",
     [
       "Horizontal sliding dropouts lets you fine-tune your geometry",
@@ -184,7 +184,7 @@ const products = [
   new Product(
     "ECaliber",
     "E-Caliber 9.6",
-    "E-Caliber 9.6 is a carbon electric mountain bike that rides and looks like a traditional cross country bike",
+    "E-Caliber 9.6 is a carbon electric mountain bike that rides and looks like a traditional cross country bike.",
     "/images/product/ecal96.jpg",
     [
       "Compact Fazua drive system with removeable drivepack",
@@ -200,7 +200,7 @@ const products = [
   new Product(
     "DefendThermoHoodie",
     "Defend Thermo Hoodie",
-    "Insulated, sweat-wicking hoodie for cold rides",
+    "Insulated, sweat-wicking hoodie for cold rides.",
     "/images/product/dth.webp",
     [
       "Form-fitting hood fits easily under your helmet",
@@ -215,7 +215,7 @@ const products = [
   new Product(
     "SpeedframeProFade",
     "Speedframe Pro Fade Helmet",
-    "Performance focused open-face MTB helmet",
+    "Performance focused open-face MTB helmet.",
     "/images/product/sfpro.webp",
     [
       "MIPS™ reduces rotational motion and redirects forces to protect your dome",
@@ -231,7 +231,7 @@ const products = [
   new Product(
     "RampageProCarbon",
     "Rampage Pro Carbon Mips Helmet",
-    "The MTB helmet trusted by UCI world cup champions",
+    "The MTB helmet trusted by UCI world cup champions.",
     "/images/product/rampro.webp",
     [
       "Designed with direct input from our elite downhill and freeride athletes",
@@ -246,12 +246,12 @@ const products = [
   new Product(
     "VueStray",
     "Vue Stray Goggles",
-    "See more with pro-level Vue goggle",
+    "See more with pro-level Vue goggles.",
     "/images/product/vsgog.webp",
     [
       "Widest field of view possible and reduces distractions from the side",
       "Turn-to-release tabs allow you to change lenses in seconds",
-      "Pre-curved, injection-molded polycarbonate lens for distortion-free optical clarity and increased impact resistance.",
+      "Pre-curved, injection-molded polycarbonate lens for distortion-free optical clarity and increased impact resistance",
       "TruLock lens swapping and removal system",
     ],
     120,
@@ -261,7 +261,7 @@ const products = [
   new Product(
     "DefendFire",
     "Defend Fire Gloves",
-    "Water resistant cold weather MTB gloves with D30® armor",
+    "Water resistant cold weather MTB gloves with D30® armor.",
     "/images/product/dfg.webp",
     [
       "Brushed Cordura® top-hand material offers superior durability with a warm, comfortable, and water-resistant build",
@@ -280,8 +280,8 @@ const products = [
     "images/product/rovtersp.jpg",
     [
       "18mm Vertical Compliance (20mm offset / Full Extension)",
-      "Proven clamp design ensures ease of adjustment and slip-free performance.",
-      "No-Fault crash replacement policy. Lifetime warranty.",
+      "Proven clamp design ensures ease of adjustment and slip-free performance",
+      "No-Fault crash replacement policy. Lifetime warranty",
       "Lightweight - 194 grams (27.2 x 330mm x 0)",
     ],
     250,
@@ -322,7 +322,7 @@ const products = [
   new Product(
     "TopFuelC",
     "Top Fuel C Frameset",
-    "Top Fuel C is a carbon full suspension frameset made for a super-fast and fun down-county build",
+    "Top Fuel C is a carbon full suspension frameset made for a super-fast and fun down-county build.",
     "/images/product/tfc.webp",
     [
       "OCLV Mountain Carbon frame with Mino Link adjustable geometry",
