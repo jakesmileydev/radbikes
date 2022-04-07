@@ -120,7 +120,7 @@ const setUpShop = function () {
     </div>
 
     <form class="search-bar">
-      <input class="search-input" type="text" placeholder="Search products, categories, features, brands...">
+      <input class="search-input" type="text" placeholder="Search products...">
       <button class="search-btn">Search</button>
     </form>
     

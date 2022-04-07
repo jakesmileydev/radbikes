@@ -378,7 +378,7 @@
 .search-bar {
   display: flex;
   justify-content: center;
-  align-items: center;
+
   gap: 1rem;
   grid-column: 2 / 5;
   padding: 2rem;
@@ -390,7 +390,8 @@
   width: 50%;
 }
 .search-btn {
-  padding: 0.4rem 1rem;
+  padding: 0.3rem 1.2rem;
+  font-size: 1rem;
 }
 .shop sidebar {
   padding: 2rem 0 2rem 2rem;
