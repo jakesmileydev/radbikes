@@ -15,6 +15,8 @@ class Data {
   #data;
   #currentFilter;
   #currentSearch;
+  #shoppingCart = [];
+
   _getData() {
     return this.#data;
   }
@@ -32,6 +34,12 @@ class Data {
   }
   _setCurrentSearch(searchArray) {
     this.#currentSearch = searchArray;
+  }
+  _getShoppingCart() {
+    return this.#shoppingCart;
+  }
+  _addToShoppingCart(product) {
+    this.#shoppingCart.push(product);
   }
 }
 

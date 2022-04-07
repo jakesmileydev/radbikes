@@ -64,7 +64,7 @@ const mobileFooterNav = function () {
   array.forEach((btn) => {
     btn.addEventListener("click", function (e) {
       const width = document.body.clientWidth;
-      console.log(width);
+
       if (width > 768) return;
 
       const thisColumn = btn
@@ -107,9 +107,7 @@ const ctaSubmit = function () {
   });
 };
 const setUpShop = function () {
-  document.querySelector("main").innerHTML = "";
-  document.querySelector(".footer-image").style.backgroundColor = "#f1f1f1";
-  document.querySelector("body").style.backgroundColor = "#f1f1f1";
+  clearMain("#f1f1f1");
 
   const sidebarHTML = `
   <section class="section--shop">
@@ -186,9 +184,12 @@ const resetShop = function () {
 };
 const searchProducts = function (e) {
   e.preventDefault();
+  // Clear all existing filter displays
   clearCollectionSortDisplay();
   clearPriceSortDisplay();
+  // Reset breadcrumbs display and #currentFilter in data
   resetShop();
+  // Find searched items in productData and create new array
   let searchArr = [];
   const searchTerm = document.querySelector(".search-input").value;
   window.location.hash = `#search=${searchTerm}`;
@@ -197,12 +198,13 @@ const searchProducts = function (e) {
     searchableString +=
       product.name + product.tags + product.features + product.brand;
     searchableString = searchableString.toUpperCase();
-
     if (searchableString.includes(searchTerm.toUpperCase())) {
       searchArr.push(product);
     }
   });
+  // Clear products section
   document.querySelector(".products").innerHTML = "";
+  // If there are no search results, display error message and leave function
   if (searchArr.length === 0) {
     document
       .querySelector(".products")
@@ -212,6 +214,7 @@ const searchProducts = function (e) {
       );
     return;
   }
+  // Render search results
   productData._setCurrentSearch(searchArr);
   renderProducts(searchArr);
 };
@@ -293,12 +296,15 @@ const clearCollectionSortDisplay = function () {
 const sortShop = function (e) {
   if (!e.target.classList.contains("sort-btn")) return;
   if (!document.querySelector(".product")) return;
+  // Clear existing sort indicators
   clearPriceSortDisplay(e);
+  // Add new sort indicators
   e.target
     .closest("li")
     .querySelector(".sort-filter-check")
     .classList.add("filter-check--selected");
   e.target.classList.add("filter--selected");
+  // Get currently displayed products, sort them, and re-render
   if (e.target.dataset.sort === "LOW") {
     const sortedLow = getRenderedProducts();
     sortedLow.sort((x, y) => x.price - y.price);
@@ -309,6 +315,49 @@ const sortShop = function (e) {
     sortedHigh.sort((x, y) => y.price - x.price);
     renderProducts(sortedHigh);
   }
+};
+const handleMainClick = function (e) {
+  // Sort buttons in shop
+  if (e.target.classList.contains("sort-btn")) return sortShop(e);
+  // Add to cart button on product page
+  if (e.target.classList.contains("product-page-add")) return addToCart(e);
+};
+const handleHeaderClick = function (e) {
+  // View cart btn in cart summary
+  if (e.target.classList.contains("view-cart-btn")) {
+    window.location.hash = "#ShoppingCart";
+    return openShoppingCart();
+  }
+};
+const addToCart = function (e) {
+  // Return if the animation is still occurring
+  if (e.target.classList.contains("adding-to-cart")) return;
+
+  //  Checkmark animation
+  const checkSVG = `
+  <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+      <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+      <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+    </svg>
+  `;
+  e.target.textContent = "";
+  e.target.classList.add("adding-to-cart");
+  e.target.insertAdjacentHTML("afterbegin", checkSVG);
+  setTimeout(() => {
+    e.target.style.transition = "none";
+    e.target.innerHTML = "ADD TO CART";
+    e.target.classList.remove("adding-to-cart");
+  }, 2000);
+  setTimeout(() => {
+    e.target.style.removeProperty("transition");
+  }, 2100);
+  // Push to shopping cart
+  productData._addToShoppingCart(
+    productData._getData().find((product) => product.id === e.target.dataset.id)
+  );
+  // Update cart quanity
+
+  // Open cart summary for 2 seconds
 };
 const displayBreadcrumbs = function (crumb) {
   document
@@ -325,16 +374,20 @@ const displaySelectedFilter = function (filter) {
     .querySelector("i")
     .classList.add("filter-check--selected");
 };
-const renderProductPage = function (id) {
+const clearMain = function (backgroundColor = "#fff") {
   document.querySelector("main").innerHTML = "";
-  document.querySelector(".footer-image").style.backgroundColor = "#fff";
-  document.querySelector("body").style.backgroundColor = "#fff";
+  document.querySelector(".footer-image").style.backgroundColor =
+    backgroundColor;
+  document.querySelector("body").style.backgroundColor = backgroundColor;
   scrollTo(0, 0);
+};
+const renderProductPage = function (id) {
+  clearMain();
 
   const thisProduct = productData
     ._getData()
     .find((product) => product.id === id);
-  console.log(thisProduct);
+
   const productPageHTML = `
     <section class="section--product-page">
         <img
@@ -349,7 +402,9 @@ const renderProductPage = function (id) {
           <p class="product-page-phrase">
             ${thisProduct.phrase}
           </p>
-          <button class="product-page-add">ADD TO CART</button>
+          <button data-id="${
+            thisProduct.id
+          }"class="product-page-add">ADD TO CART</button>
           <ul class="product-page-features">
             <li>${thisProduct.features[0]}</li>
             <li>${thisProduct.features[1]}</li>
@@ -380,20 +435,30 @@ const renderProductPage = function (id) {
     .querySelector("main")
     .insertAdjacentHTML("afterbegin", productPageHTML);
 };
+const openShoppingCart = function () {};
 const navigate = function () {
+  // Remove the hash
   const location = window.location.hash.slice(1);
   if (!location) return;
-  if (location.slice(0, 7) === "Product") {
-    return renderProductPage(location.slice(8));
-  }
+  // If the mobile nav menu is open, close it
   document.querySelector(".main-nav").classList.remove("main-nav-mobile-open");
   document
     .querySelector(".mobile-nav-btn")
     .classList.remove("mobile-nav-btn--open");
-  if (!location.includes("Shop")) return;
+  // If navigating to a product, leave function and render product instead
+  if (location.slice(0, 7) === "Product") {
+    return renderProductPage(location.slice(8));
+  }
+  // If navigating to shopping cart, leave function and render shopping cart
+  if (location.slice(0, 12) === "ShoppingCart") {
+    return openShoppingCart();
+  }
+  if (!location.includes("Shop"))
+    // If navigating to shop, render search bar, breadcrumbs, and filters
+    return;
   setUpShop();
   scroll(0, 0);
-
+  // Clear existing sort indicators for collections filters in shop
   clearCollectionSortDisplay();
 
   const crumb = location.slice(5);
@@ -403,6 +468,7 @@ const navigate = function () {
     productData._setCurrentFilter("");
   }
 
+  // CLEAN THIS SECTION UP LATER, DRY PRINCIPLE, analyzeCrumb() function
   if (crumb === "Bikes") {
     const bikes = productData
       ._getData()
@@ -465,8 +531,8 @@ const initialize = function () {
   mobileNav();
   ctaSubmit();
 
-  document.querySelector("main").addEventListener("click", sortShop);
-
+  document.querySelector("main").addEventListener("click", handleMainClick);
+  document.querySelector("header").addEventListener("click", handleHeaderClick);
   window.addEventListener("hashchange", navigate);
   window.addEventListener("load", navigate);
 };

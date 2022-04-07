@@ -1,6 +1,3 @@
-@media (max-width: 137rem) {
-}
-
 @media (max-width: 98em) {
   .section--featured {
     max-width: 90%;
@@ -25,6 +22,9 @@
   .section--product-page {
     margin-top: 56.31px;
   }
+  .cart-summary {
+    top: 56.31px;
+  }
   .footer-copy {
     padding-top: 4rem;
   }
@@ -43,6 +43,11 @@
   .checkmark__check {
     stroke-dasharray: 82;
     stroke-dashoffset: 82;
+  }
+  .product-page-add.adding-to-cart,
+  .product-page-add.adding-to-cart:hover,
+  .product-page-add.adding-to-cart:active {
+    height: 42.59px;
   }
   /* Shop */
   .products {
