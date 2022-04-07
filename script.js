@@ -57,7 +57,6 @@ const slider = function () {
     e.key === "ArrowRight" && nextSlide();
   });
 };
-
 const mobileFooterNav = function () {
   const footerMobileBtns = document.querySelectorAll(".footer-mobile-btn");
   const array = Array.from(footerMobileBtns);
@@ -79,7 +78,6 @@ const mobileFooterNav = function () {
     });
   });
 };
-
 const mobileNav = function () {
   document
     .querySelector(".mobile-nav-btn-wrapper")
@@ -92,7 +90,6 @@ const mobileNav = function () {
         .classList.toggle("main-nav-mobile-open");
     });
 };
-
 const ctaSubmit = function () {
   const form = document.querySelector(".cta-form");
   form.addEventListener("submit", function (e) {
@@ -109,7 +106,6 @@ const ctaSubmit = function () {
     form.insertAdjacentHTML("afterbegin", HTML);
   });
 };
-
 const setUpShop = function () {
   document.querySelector("main").innerHTML = "";
   document.querySelector(".footer-image").style.backgroundColor = "#f1f1f1";
@@ -183,7 +179,6 @@ const setUpShop = function () {
     .querySelector(".search-bar")
     .addEventListener("submit", searchProducts);
 };
-
 const resetShop = function () {
   document.querySelector(".breadcrumbs-links").innerHTML =
     '<a href="#Shop">SHOP</a>';
@@ -196,6 +191,7 @@ const searchProducts = function (e) {
   resetShop();
   let searchArr = [];
   const searchTerm = document.querySelector(".search-input").value;
+  window.location.hash = `#search=${searchTerm}`;
   productData._getData().forEach((product) => {
     let searchableString = "";
     searchableString +=
@@ -219,7 +215,6 @@ const searchProducts = function (e) {
   productData._setCurrentSearch(searchArr);
   renderProducts(searchArr);
 };
-
 const renderProducts = function (arr) {
   document.querySelector(".products").innerHTML = "";
 
@@ -264,7 +259,6 @@ const renderProducts = function (arr) {
     .querySelector(".products")
     .insertAdjacentHTML("afterbegin", productHTML);
 };
-
 const getRenderedProducts = function () {
   return productData._getCurrentFilter()
     ? productData
@@ -274,8 +268,7 @@ const getRenderedProducts = function () {
         )
     : productData._getCurrentSearch() ?? productData._getData();
 };
-
-const clearPriceSortDisplay = function (e) {
+const clearPriceSortDisplay = function () {
   const sortBtns = Array.from(document.querySelectorAll(".sort-btn"));
   sortBtns.forEach((btn) => btn.classList.remove("filter--selected"));
   const sortBtnChecks = Array.from(
@@ -285,7 +278,6 @@ const clearPriceSortDisplay = function (e) {
     check.classList.remove("filter-check--selected")
   );
 };
-
 const clearCollectionSortDisplay = function () {
   const selectedFilters = Array.from(
     document.querySelectorAll(".filter--selected")
@@ -300,6 +292,7 @@ const clearCollectionSortDisplay = function () {
 };
 const sortShop = function (e) {
   if (!e.target.classList.contains("sort-btn")) return;
+  if (!document.querySelector(".product")) return;
   clearPriceSortDisplay(e);
   e.target
     .closest("li")
@@ -317,7 +310,6 @@ const sortShop = function (e) {
     renderProducts(sortedHigh);
   }
 };
-
 const displayBreadcrumbs = function (crumb) {
   document
     .querySelector(".breadcrumbs-links")
@@ -333,12 +325,12 @@ const displaySelectedFilter = function (filter) {
     .querySelector("i")
     .classList.add("filter-check--selected");
 };
-
 const renderProductPage = function (id) {
   document.querySelector("main").innerHTML = "";
   document.querySelector(".footer-image").style.backgroundColor = "#fff";
   document.querySelector("body").style.backgroundColor = "#fff";
   scrollTo(0, 0);
+
   const thisProduct = productData
     ._getData()
     .find((product) => product.id === id);
