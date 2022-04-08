@@ -151,7 +151,7 @@ header .logo {
 .cart-summary {
   font-family: "Roboto", sans-serif;
   width: 24rem;
-  padding: 2rem;
+  padding-top: 2rem;
   margin-right: 2rem;
   background-color: white;
   position: absolute;
@@ -169,18 +169,26 @@ header .logo {
   border-top: 1px solid #e9e9e9;
   padding: 1.4rem 0;
 }
+.subtotal-wrapper {
+  padding: 0 2rem 2rem 2rem;
+}
 .summary-items {
-  padding-bottom: 1.4rem;
+  padding: 0 2rem;
+
+  max-height: 60vh;
+  overflow-y: auto;
 }
 .summary-item {
   display: grid;
   grid-template-columns: 1.6fr 1fr 0.2fr;
   gap: 2rem;
+  padding-bottom: 2rem;
 }
 .cart-summary-delete {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   align-self: start;
   cursor: pointer;
+  color: red;
 }
 .summary-image {
   width: 100%;
@@ -188,7 +196,7 @@ header .logo {
 .summary-item-info {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.6rem;
 }
 .view-cart-btn {
   font-size: 0.9rem;

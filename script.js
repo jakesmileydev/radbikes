@@ -352,20 +352,31 @@ const addToCart = function (e) {
   setTimeout(() => {
     e.target.style.removeProperty("transition");
   }, 2100);
-  // Push to shopping cart
-  productData._addToShoppingCart(
-    productData._getData().find((product) => product.id === e.target.dataset.id)
-  );
+  // If the item is not already in the cart, push to shopping cart
+  const thisProduct = productData
+    ._getData()
+    .find((product) => product.id === e.target.dataset.id);
+  if (
+    !productData
+      ._getShoppingCart()
+      .find((product) => product.id === thisProduct.id)
+  ) {
+    productData._addToShoppingCart(thisProduct);
+  }
+
   // Update cart quanity
-  document.querySelector(".cart-qty").textContent = productData
-    ._getShoppingCart()
-    .length.toString();
+  thisProduct.quantityInCart++;
+  const totalInCart = productData._getShoppingCart().reduce((prev, curr) => {
+    return prev + curr.quantityInCart;
+  }, 0);
+  console.log(totalInCart);
+  document.querySelector(".cart-qty").textContent = totalInCart;
   if (productData._getShoppingCart().length > 0) {
     document.querySelector(".cart-qty").style.backgroundColor = "#ff8811";
   }
   // Update cart summary html
   document.querySelector(".summary-items").innerHTML = "";
-  let summaryHTML;
+  let summaryHTML = "";
   productData._getShoppingCart().forEach((item) => {
     summaryHTML += `
     <div class="summary-item">
@@ -377,14 +388,23 @@ const addToCart = function (e) {
     <div class="summary-item-info">
       <p class="summary-item-name">${item.name}</p>
       <p class="summary-item-price">$ ${item.price.toLocaleString()}</p>
-      <p class="summary-item-qty">QTY: 1</p>
+      <p class="summary-item-qty">QTY: ${item.quantityInCart}</p>
     </div>
-    <i data-id="Farley7" class="ph-x cart-summary-delete"></i>
+    <i data-id="${item.id}" class="ph-x cart-summary-delete"></i>
   </div>
     `;
   });
-  console.log(`Adding ${e.target.dataset.id} to cart`);
-  console.log(productData._getShoppingCart());
+  document
+    .querySelector(".summary-items")
+    .insertAdjacentHTML("afterbegin", summaryHTML);
+  // Update Subtotal
+  const subtotal = productData._getShoppingCart().reduce((prev, curr) => {
+    return prev + curr.quantityInCart * curr.price;
+  }, 0);
+  console.log(subtotal);
+  document.querySelector(
+    ".subtotal-amount"
+  ).textContent = `$ ${subtotal.toLocaleString()}.00`;
 };
 const displayBreadcrumbs = function (crumb) {
   document

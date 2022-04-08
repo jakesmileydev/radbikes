@@ -553,22 +553,22 @@
 
 .product-page-name {
   font-size: 1.4rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.6rem;
   font-weight: 500;
 }
 .product-page-price {
   font-weight: 500;
   font-size: 1.1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .product-page-phrase {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #5d5d5d;
 }
 .product-page-add {
   /* transition: none; */
   background-color: #54c854;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 .product-page-add:hover,
 .product-page-add:active {
