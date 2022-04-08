@@ -482,8 +482,84 @@ const renderProductPage = function (id) {
     .querySelector("main")
     .insertAdjacentHTML("afterbegin", productPageHTML);
 };
-const openShoppingCart = function () {};
 
+const openShoppingCart = function () {
+  closeCartSummary();
+  clearMain();
+  const cartHTML = `
+  <section class="section--shopping-cart">
+  <h2>Shopping Cart</h2>
+
+  <div class="cart-main">
+    <div class="cart-details">
+      <p class="cart-details-header">DETAILS</p>
+      <p class="cart-details-header">PRICE</p>
+      <p class="cart-details-header">QTY</p>
+      <p class="cart-details-header">TOTAL</p>
+      
+    </div>
+    <div class="cart-money">
+      <div class="cart-totals">
+        <div class="cart-subtotal">
+          <p>SUBTOTAL</p>
+          <p class="cart-total-amounts">$ 9,550</p>
+        </div>
+        <div class="cart-shipping">
+          <p>SHIPPING</p>
+          <p class="cart-total-amounts">$ 100.00</p>
+        </div>
+        <div class="cart-total">
+          <p>ORDER TOTAL</p>
+          <p class="cart-total-amounts">$ 9,650.00</p>
+        </div>
+      </div>
+      <button class="cart-checkout">CHECKOUT</button>
+    </div>
+  </div>
+</section>
+  `;
+  document.querySelector("main").insertAdjacentHTML("afterbegin", cartHTML);
+  renderCartItems();
+  updateCartTotals();
+};
+const renderCartItems = function () {
+  if (productData._getShoppingCart().length === 0) {
+    return document
+      .querySelector(".cart-details")
+      .insertAdjacentHTML(
+        "beforeend",
+        "Nothing to see here. Visit the shop to add items to your cart!"
+      );
+  }
+  let HTML = "";
+  productData._getShoppingCart().forEach((item) => {
+    HTML += `
+    <div class="cart-item-details">
+      <img src="${item.image}" alt="" />
+      <div class="cart-item-info">
+        <p class="cart-item-name">${item.name}</p>
+        <p class="cart-item-phrase">
+          {${item.phrase}
+        </p>
+      </div>
+    </div>
+    <div class="cart-item-price">$ ${item.price.toLocaleString()}.00</div>
+    <div class="cart-quantity">
+      <div class="cart-item-quantity-container">
+        <i class="ph-minus cart-item-subtract"></i>
+        <p class="cart-item-quantity">${item.quantityInCart}</p>
+        <i class="ph-plus cart-item-add"></i>
+      </div>
+      <div class="cart-item-remove">REMOVE</div>
+    </div>
+    <div class="cart-item-total">$ ${(
+      item.price * item.quantityInCart
+    ).toLocaleString()}</div>
+    `;
+  });
+  document.querySelector(".cart-details").insertAdjacentHTML("beforeend", HTML);
+};
+const updateCartTotals = function () {};
 const navigate = function () {
   // Remove the hash
   const location = window.location.hash.slice(1);
