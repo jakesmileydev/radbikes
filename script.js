@@ -329,6 +329,7 @@ const handleHeaderClick = function (e) {
     return openShoppingCart();
   }
 };
+
 const addToCart = function (e) {
   // Return if the animation is still occurring
   if (e.target.classList.contains("adding-to-cart")) return;
@@ -356,8 +357,34 @@ const addToCart = function (e) {
     productData._getData().find((product) => product.id === e.target.dataset.id)
   );
   // Update cart quanity
-
-  // Open cart summary for 2 seconds
+  document.querySelector(".cart-qty").textContent = productData
+    ._getShoppingCart()
+    .length.toString();
+  if (productData._getShoppingCart().length > 0) {
+    document.querySelector(".cart-qty").style.backgroundColor = "#ff8811";
+  }
+  // Update cart summary html
+  document.querySelector(".summary-items").innerHTML = "";
+  let summaryHTML;
+  productData._getShoppingCart().forEach((item) => {
+    summaryHTML += `
+    <div class="summary-item">
+    <img
+      class="summary-image"
+      src="${item.image}"
+      alt=""
+    />
+    <div class="summary-item-info">
+      <p class="summary-item-name">${item.name}</p>
+      <p class="summary-item-price">$ ${item.price.toLocaleString()}</p>
+      <p class="summary-item-qty">QTY: 1</p>
+    </div>
+    <i data-id="Farley7" class="ph-x cart-summary-delete"></i>
+  </div>
+    `;
+  });
+  console.log(`Adding ${e.target.dataset.id} to cart`);
+  console.log(productData._getShoppingCart());
 };
 const displayBreadcrumbs = function (crumb) {
   document
@@ -436,10 +463,11 @@ const renderProductPage = function (id) {
     .insertAdjacentHTML("afterbegin", productPageHTML);
 };
 const openShoppingCart = function () {};
+
 const navigate = function () {
   // Remove the hash
   const location = window.location.hash.slice(1);
-  if (!location) return;
+  if (!location) return navigateHome();
   // If the mobile nav menu is open, close it
   document.querySelector(".main-nav").classList.remove("main-nav-mobile-open");
   document
@@ -524,15 +552,17 @@ const navigate = function () {
     displaySelectedFilter(".filter--components");
   }
 };
+const openCartSummary = function () {
+  document.querySelector(".cart-summary").classList.add("cart-summary--open");
+  document.querySelector(".shopping-cart i").style.color = "#ff8811";
+};
+const closeCartSummary = function () {
+  document
+    .querySelector(".cart-summary")
+    .classList.remove("cart-summary--open");
+  document.querySelector(".shopping-cart i").style.color = "#000";
+};
 const cartSummaryEvents = function () {
-  const openCartSummary = function () {
-    document.querySelector(".cart-summary").classList.add("cart-summary--open");
-  };
-  const closeCartSummary = function () {
-    document
-      .querySelector(".cart-summary")
-      .classList.remove("cart-summary--open");
-  };
   document
     .querySelector(".shopping-cart")
     .addEventListener("mouseenter", openCartSummary);
@@ -556,6 +586,7 @@ const cartSummaryEvents = function () {
         .classList.toggle("cart-summary--open");
     });
 };
+
 const initialize = function () {
   slider();
   mobileFooterNav();
