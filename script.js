@@ -62,7 +62,7 @@ const mobileFooterNav = function () {
   const array = Array.from(footerMobileBtns);
 
   array.forEach((btn) => {
-    btn.addEventListener("click", function (e) {
+    btn.addEventListener("click", function () {
       const width = document.body.clientWidth;
 
       if (width > 768) return;
@@ -524,13 +524,44 @@ const navigate = function () {
     displaySelectedFilter(".filter--components");
   }
 };
-
+const cartSummaryEvents = function () {
+  const openCartSummary = function () {
+    document.querySelector(".cart-summary").classList.add("cart-summary--open");
+  };
+  const closeCartSummary = function () {
+    document
+      .querySelector(".cart-summary")
+      .classList.remove("cart-summary--open");
+  };
+  document
+    .querySelector(".shopping-cart")
+    .addEventListener("mouseenter", openCartSummary);
+  document
+    .querySelector(".shopping-cart")
+    .addEventListener("mouseleave", function (e) {
+      if (e.relatedTarget === document.querySelector(".cart-summary")) return;
+      closeCartSummary();
+    });
+  document
+    .querySelector(".cart-summary")
+    .addEventListener("mouseleave", function (e) {
+      if (e.target === document.querySelector(".shopping-cart")) return;
+      closeCartSummary();
+    });
+  document
+    .querySelector(".shopping-cart")
+    .addEventListener("click", function () {
+      document
+        .querySelector(".cart-summary")
+        .classList.toggle("cart-summary--open");
+    });
+};
 const initialize = function () {
   slider();
   mobileFooterNav();
   mobileNav();
   ctaSubmit();
-
+  cartSummaryEvents();
   document.querySelector("main").addEventListener("click", handleMainClick);
   document.querySelector("header").addEventListener("click", handleHeaderClick);
   window.addEventListener("hashchange", navigate);
