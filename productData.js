@@ -42,6 +42,7 @@ class Data {
   _addToShoppingCart(product) {
     this.#shoppingCart.push(product);
   }
+  _getCurrentTotal() {}
 }
 
 const products = [

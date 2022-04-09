@@ -680,9 +680,13 @@
   margin-bottom: 1rem;
 }
 .cart-shipping {
-  border-bottom: 1px solid #c4c4c4;
-  padding-bottom: 1rem;
   margin-bottom: 1rem;
+}
+.cart-shipping-disclaimer {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #dfdede;
 }
 .cart-item-quantity-container {
   display: flex;

@@ -372,7 +372,7 @@ const addToCart = function (e) {
   console.log(totalInCart);
   document.querySelector(".cart-qty").textContent = totalInCart;
   if (productData._getShoppingCart().length > 0) {
-    document.querySelector(".cart-qty").style.backgroundColor = "#ff8811";
+    document.querySelector(".cart-qty").style.backgroundColor = "red";
   }
   // Update cart summary html
   document.querySelector(".summary-items").innerHTML = "";
@@ -390,7 +390,9 @@ const addToCart = function (e) {
       <p class="summary-item-price">$ ${item.price.toLocaleString()}</p>
       <p class="summary-item-qty">QTY: ${item.quantityInCart}</p>
     </div>
-    <i data-id="${item.id}" class="ph-x cart-summary-delete"></i>
+    <i data-id="${
+      item.id
+    }" class="ph-x cart-summary-delete" title="Remove Item"></i>
   </div>
     `;
   });
@@ -502,15 +504,16 @@ const openShoppingCart = function () {
       <div class="cart-totals">
         <div class="cart-subtotal">
           <p>SUBTOTAL</p>
-          <p class="cart-total-amounts">$ 9,550</p>
+          <p class="cart-total-amounts cart-total-sub">$ 9,550</p>
         </div>
         <div class="cart-shipping">
-          <p>SHIPPING</p>
-          <p class="cart-total-amounts">$ 100.00</p>
-        </div>
+          <p>SHIPPING*</p>
+          <p class="cart-total-amounts cart-total-ship">$ 100.00</p>
+          </div>
+          <p class="cart-shipping-disclaimer">*Gear and components ship free. Bikes ship for $99.99</p>
         <div class="cart-total">
           <p>ORDER TOTAL</p>
-          <p class="cart-total-amounts">$ 9,650.00</p>
+          <p class="cart-total-amounts cart-total-total">$ 9,650.00</p>
         </div>
       </div>
       <button class="cart-checkout">CHECKOUT</button>
@@ -528,7 +531,7 @@ const renderCartItems = function () {
       .querySelector(".cart-details")
       .insertAdjacentHTML(
         "beforeend",
-        "Nothing to see here. Visit the shop to add items to your cart!"
+        `<div>Nothing to see here. Visit the <a href="#Shop"><strong>shop</strong></a> to add items to your cart!</div>`
       );
   }
   let HTML = "";
@@ -539,7 +542,7 @@ const renderCartItems = function () {
       <div class="cart-item-info">
         <p class="cart-item-name">${item.name}</p>
         <p class="cart-item-phrase">
-          {${item.phrase}
+          ${item.phrase}
         </p>
       </div>
     </div>
@@ -559,7 +562,27 @@ const renderCartItems = function () {
   });
   document.querySelector(".cart-details").insertAdjacentHTML("beforeend", HTML);
 };
-const updateCartTotals = function () {};
+const updateCartTotals = function () {
+  const subtotal = productData._getShoppingCart().reduce((prev, curr) => {
+    return prev + curr.quantityInCart * curr.price;
+  }, 0);
+  document.querySelector(
+    ".cart-total-sub"
+  ).textContent = `$ ${subtotal.toLocaleString()}.00`;
+  const shippingAmount =
+    productData
+      ._getShoppingCart()
+      .filter((product) => product.tags.includes("MTB"))
+      .reduce((prev, curr) => {
+        return prev + curr.quantityInCart;
+      }, 0) * 99.99;
+  document.querySelector(
+    ".cart-total-ship"
+  ).textContent = `$ ${shippingAmount.toFixed(2)}`;
+  document.querySelector(".cart-total-total").textContent = `$ ${(
+    Math.round((subtotal + shippingAmount + Number.EPSILON) * 100) / 100
+  ).toLocaleString()}`;
+};
 const navigate = function () {
   // Remove the hash
   const location = window.location.hash.slice(1);
@@ -650,7 +673,7 @@ const navigate = function () {
 };
 const openCartSummary = function () {
   document.querySelector(".cart-summary").classList.add("cart-summary--open");
-  document.querySelector(".shopping-cart i").style.color = "#ff8811";
+  document.querySelector(".shopping-cart i").style.color = "red";
 };
 const closeCartSummary = function () {
   document

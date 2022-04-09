@@ -188,6 +188,8 @@ header .logo {
   font-size: 1.1rem;
   align-self: start;
   cursor: pointer;
+}
+.cart-summary-delete:hover {
   color: red;
 }
 .summary-image {
