@@ -61,8 +61,8 @@ const changeCartQuantity = function (e) {
   e.target
     .closest(".cart-row")
     .querySelector(".cart-item-total").textContent = `$ ${(
-    thisProduct.quantityInCart * thisProduct.price
-  ).toLocaleString()}`;
+      thisProduct.quantityInCart * thisProduct.price
+    ).toLocaleString()}`;
   updateCartSummary();
   updateCartTotals();
 };
@@ -226,6 +226,5 @@ const initialize = function () {
   document.querySelector("main").addEventListener("click", handleMainClick);
   document.querySelector("header").addEventListener("click", handleHeaderClick);
   window.addEventListener("hashchange", navigate);
-  window.addEventListener("load", navigate);
 };
 initialize();
