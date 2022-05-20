@@ -901,3 +901,6 @@
   font-weight: 500;
   letter-spacing: 0.7px;
 }
+.recaptcha-box {
+  margin-bottom: 1rem;
+}
