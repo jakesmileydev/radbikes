@@ -6,7 +6,7 @@ const openContactPage = function () {
             <h1 class="contact-header">Contact Us</h1>
             <p class="banner-text">Questions, bug reports, feedback, feature requests -- Let us know!</p>
         </div>
-        <form name="contact" action="POST" data-netlify="true" class="contact-form" id="contact-form">
+        <form action="POST" data-netlify="true" class="contact-form" id="contact-form">
 
             <label for="contact-form-input__email">Email Address</label>
             <input name="email" type="email"/ class="contact-form-input__email">
