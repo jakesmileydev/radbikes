@@ -91,7 +91,7 @@ const navigateHome = function () {
           <div class="featured-product">
             
               <img
-                src="/images/featured/sjcompalloy.webp"
+                src="/images/featured/sjcompalloy.jpg"
                 alt="Stumpjumper Comp Alloy mountain bike"
               />
             
@@ -104,7 +104,7 @@ const navigateHome = function () {
         <div class="slide">
           <div class="featured-product">
             <img
-              src="/images/featured/turbolevoalloy.webp"
+              src="/images/featured/turbolevoalloy.jpg"
               alt="Turbo Levo Alloy mountain bike"
             />
             <p class="featured-product-name">Turbo Levo Alloy</p>
@@ -116,7 +116,7 @@ const navigateHome = function () {
         <div class="slide">
           <div class="featured-product">
             <img
-              src="/images/featured/rockhopper275.webp"
+              src="/images/featured/rockhopper275.jpg"
               alt="Rockhopper 27.5 mountain bike"
             />
             <p class="featured-product-name">Rockhopper 27.5</p>
@@ -128,7 +128,7 @@ const navigateHome = function () {
         <div class="slide">
           <div class="featured-product">
             <img
-              src="/images/featured/sjevoexpert.webp"
+              src="/images/featured/sjevoexpert.jpg"
               alt="Stumpjumper Evo Expert mountain bike"
             />
             <p class="featured-product-name">Stumpjumper Evo Expert</p>
@@ -140,7 +140,7 @@ const navigateHome = function () {
         <div class="slide">
           <div class="featured-product">
             <img
-              src="/images/featured/fusecomp29.webp"
+              src="/images/featured/fusecomp29.jpg"
               alt=" mountain bike"
             />
             <p class="featured-product-name">Fuse Comp 29</p>
