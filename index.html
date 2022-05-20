@@ -1,356 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Favicon -->
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/images/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/images/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/images/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/images/favicon/site.webmanifest" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- icons -->
-    <script src="https://unpkg.com/phosphor-icons"></script>
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/images/favicon/site.webmanifest" />
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Raleway&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Rock+Salt&display=swap"
-      rel="stylesheet"
-    />
+  <!-- icons -->
+  <script src="https://unpkg.com/phosphor-icons"></script>
 
-    <!-- style sheets -->
-    <link rel="stylesheet" href="/css/general.css" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="stylesheet" href="/css/queries.css" />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Raleway&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Rock+Salt&display=swap"
+    rel="stylesheet" />
 
-    <!-- scripts -->
-    <script defer src="productData.js"></script>
-    <script defer src="navigateHome.js"></script>
-    <script defer src="script.js"></script>
+  <!-- style sheets -->
+  <link rel="stylesheet" href="/css/general.css" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link rel="stylesheet" href="/css/queries.css" />
 
-    <title>Rad Bikes | Make all trails your playground</title>
-  </head>
+  <!-- scripts -->
+  <script defer src="javascript/contactPage.js"></script>
+  <script defer src="javascript/slider.js"></script>
+  <script defer src="javascript/productData.js"></script>
+  <script defer src="javascript/shoppingcart.js"></script>
+  <script defer src="javascript/shop.js"></script>
+  <script defer src="javascript/navigateHome.js"></script>
+  <script defer src="javascript/main.js"></script>
 
-  <body>
-    <header>
-      <div class="main-nav-wrapper">
-        <a href="#" class="logo">
-          <span class="rad">R<span class="a">a</span> &nbsp;D</span>BIKES
-        </a>
-        <button class="mobile-nav-btn-wrapper">
-          <div class="mobile-nav-btn">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </button>
+  <title>Rad Bikes | Make all trails your playground</title>
+</head>
 
-        <nav class="main-nav">
-          <a class="header-link" href="#Shop">SHOP</a>
-          <a class="header-link" href="#Shop/Bikes">BIKES</a>
-          <a class="header-link" href="#Shop/Gear">GEAR</a>
-          <a class="header-link" href="#Shop/Components">COMPONENTS</a>
-          <a class="header-link" href="#Contact">CONTACT</a>
-        </nav>
-        <div class="shopping-cart">
-          <i class="ph-shopping-cart-bold"></i>
-          <div class="cart-qty">0</div>
+<body>
+  <header>
+    <div class="main-nav-wrapper">
+      <a href="#" class="logo">
+        <span class="rad">R<span class="a">a</span> &nbsp;D</span>BIKES
+      </a>
+      <button class="mobile-nav-btn-wrapper">
+        <div class="mobile-nav-btn">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div class="cart-summary">
-          <div class="summary-items"></div>
-          <div class="subtotal-wrapper">
-            <div class="subtotal">
-              <div class="subtotal-text">SUBTOTAL</div>
-              <div class="subtotal-amount">$ 0.00</div>
-            </div>
-            <button class="view-cart-btn">VIEW CART & CHECKOUT</button>
+      </button>
+
+      <nav class="main-nav">
+        <a class="header-link" href="#Shop">SHOP</a>
+        <a class="header-link" href="#Shop/Bikes">BIKES</a>
+        <a class="header-link" href="#Shop/Gear">GEAR</a>
+        <a class="header-link" href="#Shop/Components">COMPONENTS</a>
+        <a class="header-link" href="#Contact">CONTACT</a>
+      </nav>
+      <div class="shopping-cart">
+        <i class="ph-shopping-cart-bold"></i>
+        <div class="cart-qty">0</div>
+      </div>
+      <div class="cart-summary">
+        <div class="summary-items"></div>
+        <div class="subtotal-wrapper">
+          <div class="subtotal">
+            <div class="subtotal-text">SUBTOTAL</div>
+            <div class="subtotal-amount">$ 0.00</div>
+          </div>
+          <button class="view-cart-btn">VIEW CART & CHECKOUT</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section--hero">
+      <img src="/images/home/hero3.jpg" class="hero-img" alt="man on mountain bike trail, leaning hard into a turn" />
+      <div class="hero-text">
+        <h1 class="hero-header">MAKE ALL TRAILS YOUR PLAYGROUND</h1>
+        <a href="#Shop" class="hero-btn">SHOP NOW</a>
+      </div>
+    </section>
+
+    <section class="section--collections">
+      <h2 class="collections-header">Shop Collections</h2>
+      <div class="collections">
+        <div>
+          <h3 class="collection-title">GEAR</h3>
+          <a href="#Shop/Gear" class="collection" name="HELMETS, GLOVES, GOGGLES, APPAREL">
+            <img src="/images/home/gearsnowedit.jpg" alt="" class="collection--gear" />
+          </a>
+        </div>
+        <div>
+          <h3 class="collection-title">FULL SUSPENSION</h3>
+          <a href="#Shop/Bikes/FullSuspension" class="collection" name="FULL SUSPENSION BIKES">
+            <img src="/images/home/splashfull.jpg" alt="" class="collection--fullsus" />
+          </a>
+        </div>
+        <div>
+          <h3 class="collection-title">COMPONENTS</h3>
+          <a href="#Shop/Components" class="collection" name="SHOCKS, SEATPOSTS, BRAKES, FRAMES">
+            <img src="/images/home/shockcomponent.jpg" alt="" " />
+            </a>
+          </div>
+          <div>
+            <h3 class=" collection-title">HARDTAIL</h3>
+            <a href="#Shop/Bikes/Hardtail" class="collection" name="HARDTAIL BIKES">
+              <img src="/images/home/hardtailsunset.jpg" alt="" class="collection--hardtail" />
+            </a>
+        </div>
+      </div>
+    </section>
+    <section class="section--brands">
+      <div class="brands">
+        <img class="trek" src="/images/brands/trek.png" alt="" />
+        <img class="specialized" src="/images/brands/specialized.png" alt="" />
+        <img class="fox" src="/images/brands/fox.png" alt="" />
+        <img class="giant" src="/images/brands/giant.png" alt="" />
+        <img class="kona" src="/images/brands/kona.png" alt="" />
+      </div>
+    </section>
+    <section class="section--featured">
+      <h2 class="featured-header">Best Sellers</h2>
+      <div class="slider">
+        <div class="slide">
+          <div class="featured-product">
+            <img src="/images/featured/sjcompalloy.webp" alt="Stumpjumper Comp Alloy mountain bike" />
+            <p class="featured-product-name">Stumpjumper Comp Alloy</p>
+            <p class="featured-product-price">$ 3,600</p>
+            <button>ADD TO CART</button>
+            <a href="" class="featured-product-link">Learn More</a>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="featured-product">
+            <img src="/images/featured/turbolevoalloy.webp" alt="Turbo Levo Alloy mountain bike" />
+            <p class="featured-product-name">Turbo Levo Alloy</p>
+            <p class="featured-product-price">$ 5,500</p>
+            <button>ADD TO CART</button>
+            <a href="" class="featured-product-link">Learn More</a>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="featured-product">
+            <img src="/images/featured/rockhopper275.webp" alt="Rockhopper 27.5 mountain bike" />
+            <p class="featured-product-name">Rockhopper 27.5</p>
+            <p class="featured-product-price">$ 700</p>
+            <button>ADD TO CART</button>
+            <a href="" class="featured-product-link">Learn More</a>
+          </div>
+        </div>
+
+        <div class="slide">
+          <div class="featured-product">
+            <img src="/images/featured/sjevoexpert.webp" alt="Stumpjumper Evo Expert mountain bike" />
+            <p class="featured-product-name">Stumpjumper Evo Expert</p>
+            <p class="featured-product-price">$ 6,300</p>
+            <button>ADD TO CART</button>
+            <a href="" class="featured-product-link">Learn More</a>
+          </div>
+        </div>
+        <div class="slide">
+          <div class="featured-product">
+            <img src="/images/featured/fusecomp29.webp" alt=" mountain bike" />
+            <p class="featured-product-name">Fuse Comp 29</p>
+            <p class="featured-product-price">$ 1,400</p>
+            <button>ADD TO CART</button>
+            <a href="" class="featured-product-link">Learn More</a>
           </div>
         </div>
       </div>
-    </header>
-
-    <main>
-      <section class="section--hero">
-        <img
-          src="/images/home/hero3.jpg"
-          class="hero-img"
-          alt="man on mountain bike trail, leaning hard into a turn"
-        />
-        <div class="hero-text">
-          <h1 class="hero-header">MAKE ALL TRAILS YOUR PLAYGROUND</h1>
-          <a href="#Shop" class="hero-btn">SHOP NOW</a>
+      <i class="ph-caret-left slider__btn slider__btn--left"></i>
+      <i class="ph-caret-right slider__btn slider__btn--right slider__btn--usable"></i>
+    </section>
+    <section class="section--cta">
+      <div class="cta">
+        <div class="cta-images">
+          <img class="cta-image" src="/images/home/cta.png" alt="" />
         </div>
-      </section>
+        <form name="signup" class="cta-form" method="post">
+          <h4 class="cta-subheader">STAY IN TOUCH</h4>
+          <h3 class="cta-header">NEVER MISS AN ADVENTURE</h3>
+          <p class="cta-text">
+            Get updates on sales, new inventory, events, MTB news, trail
+            recommendations, and more.
+          </p>
 
-      <section class="section--collections">
-        <h2 class="collections-header">Shop Collections</h2>
-        <div class="collections">
-          <div>
-            <h3 class="collection-title">GEAR</h3>
-            <a
-              href="#Shop/Gear"
-              class="collection"
-              name="HELMETS, GLOVES, GOGGLES, APPAREL"
-            >
-              <img
-                src="/images/home/gearsnowedit.jpg"
-                alt=""
-                class="collection--gear"
-              />
-            </a>
-          </div>
-          <div>
-            <h3 class="collection-title">FULL SUSPENSION</h3>
-            <a
-              href="#Shop/Bikes/FullSuspension"
-              class="collection"
-              name="FULL SUSPENSION BIKES"
-            >
-              <img
-                src="/images/home/splashfull.jpg"
-                alt=""
-                class="collection--fullsus"
-              />
-            </a>
-          </div>
-          <div>
-            <h3 class="collection-title">COMPONENTS</h3>
-            <a
-              href="#Shop/Components"
-              class="collection"
-              name="SHOCKS, SEATPOSTS, BRAKES, FRAMES"
-            >
-              <img src="/images/home/shockcomponent.jpg" alt="" " />
-            </a>
-          </div>
-          <div>
-            <h3 class="collection-title">HARDTAIL</h3>
-            <a
-              href="#Shop/Bikes/Hardtail"
-              class="collection"
-              name="HARDTAIL BIKES"
-            >
-              <img
-                src="/images/home/hardtailsunset.jpg"
-                alt=""
-                class="collection--hardtail"
-              />
-            </a>
+          <input name="email" class="cta-input--email" type="email" placeholder="Enter Your Email" />
+          <button>Sign Me Up</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <img class="footer-image" src="/images/home/footerbackground.png" alt="black silhouette of an evergreen forest" />
+    <div class="footer-outer">
+      <div class="footer-inner">
+        <div class="column-wrapper column-logo">
+          <a href="" class="logo">
+            <span class="rad">R<span class="a">a</span> &nbsp;D</span>BIKES
+          </a>
+          <div class="icons">
+            <a target="blank" href="https://www.instagram.com"><i class="ph-instagram-logo-light"></i></a>
+            <a target="blank" href="https://www.facebook.com"><i class="ph-facebook-logo-light"></i></a>
+            <a target="blank" href="https://www.pinterest.com"><i class="ph-pinterest-logo-light"></i></a>
+            <a target="blank" href="https://www.twitter.com"><i class="ph-twitter-logo-light"></i></a>
           </div>
         </div>
-      </section>
-      <section class="section--brands">
-        <div class="brands">
-          <img class="trek" src="/images/brands/trek.png" alt="" />
-          <img
-            class="specialized"
-            src="/images/brands/specialized.png"
-            alt=""
-          />
-          <img class="fox" src="/images/brands/fox.png" alt="" />
-          <img class="giant" src="/images/brands/giant.png" alt="" />
-          <img class="kona" src="/images/brands/kona.png" alt="" />
+
+        <div class="column-wrapper">
+          <button class="footer-mobile-btn">
+            SHOP<i class="ph-caret-down mobile-btn-icon"></i>
+          </button>
+          <ul class="column">
+            <li><a href="#Shop/Bikes" class="footer-link">Bikes</a></li>
+            <li><a href="#Shop/Gear" class="footer-link">Gear</a></li>
+            <li>
+              <a href="#Shop/Components" class="footer-link">Components</a>
+            </li>
+            <li>
+              <a href="#Shop/Bikes/Hardtail" class="footer-link">Hardtail</a>
+            </li>
+            <li>
+              <a href="#Shop/Bikes/FullSuspension" class="footer-link">Full Suspension</a>
+            </li>
+          </ul>
         </div>
-      </section>
-      <section class="section--featured">
-        <h2 class="featured-header">Best Sellers</h2>
-        <div class="slider">
-          <div class="slide">
-            <div class="featured-product">
-              <img
-                src="/images/featured/sjcompalloy.webp"
-                alt="Stumpjumper Comp Alloy mountain bike"
-              />
-              <p class="featured-product-name">Stumpjumper Comp Alloy</p>
-              <p class="featured-product-price">$ 3,600</p>
-              <button>ADD TO CART</button>
-              <a href="" class="featured-product-link">Learn More</a>
-            </div>
-          </div>
 
-          <div class="slide">
-            <div class="featured-product">
-              <img
-                src="/images/featured/turbolevoalloy.webp"
-                alt="Turbo Levo Alloy mountain bike"
-              />
-              <p class="featured-product-name">Turbo Levo Alloy</p>
-              <p class="featured-product-price">$ 5,500</p>
-              <button>ADD TO CART</button>
-              <a href="" class="featured-product-link">Learn More</a>
-            </div>
-          </div>
-
-          <div class="slide">
-            <div class="featured-product">
-              <img
-                src="/images/featured/rockhopper275.webp"
-                alt="Rockhopper 27.5 mountain bike"
-              />
-              <p class="featured-product-name">Rockhopper 27.5</p>
-              <p class="featured-product-price">$ 700</p>
-              <button>ADD TO CART</button>
-              <a href="" class="featured-product-link">Learn More</a>
-            </div>
-          </div>
-
-          <div class="slide">
-            <div class="featured-product">
-              <img
-                src="/images/featured/sjevoexpert.webp"
-                alt="Stumpjumper Evo Expert mountain bike"
-              />
-              <p class="featured-product-name">Stumpjumper Evo Expert</p>
-              <p class="featured-product-price">$ 6,300</p>
-              <button>ADD TO CART</button>
-              <a href="" class="featured-product-link">Learn More</a>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="featured-product">
-              <img
-                src="/images/featured/fusecomp29.webp"
-                alt=" mountain bike"
-              />
-              <p class="featured-product-name">Fuse Comp 29</p>
-              <p class="featured-product-price">$ 1,400</p>
-              <button>ADD TO CART</button>
-              <a href="" class="featured-product-link">Learn More</a>
-            </div>
-          </div>
+        <div class="column-wrapper">
+          <button class="footer-mobile-btn">
+            EXPLORE<i class="ph-caret-down mobile-btn-icon"></i>
+          </button>
+          <ul class="column">
+            <li class="footer-link">Our story</a></li>
+            <li class="footer-link">Jobs</a></li>
+            <li class="footer-link">Blog</a></li>
+            <li class="footer-link">Sustainability</a></li>
+          </ul>
         </div>
-        <i class="ph-caret-left slider__btn slider__btn--left"></i>
-        <i
-          class="ph-caret-right slider__btn slider__btn--right slider__btn--usable"
-        ></i>
-      </section>
-      <section class="section--cta">
-        <div class="cta">
-          <div class="cta-images">
-            <img class="cta-image" src="/images/home/cta.png" alt="" />
-          </div>
-          <form name="signup" class="cta-form" method="post">
-            <h4 class="cta-subheader">STAY IN TOUCH</h4>
-            <h3 class="cta-header">NEVER MISS AN ADVENTURE</h3>
-            <p class="cta-text">
-              Get updates on sales, new inventory, events, MTB news, trail
-              recommendations, and more.
-            </p>
 
-            <input
-              name="email"
-              class="cta-input--email"
-              type="email"
-              placeholder="Enter Your Email"
-            />
-            <button>Sign Me Up</button>
-          </form>
+        <div class="column-wrapper">
+          <button class="footer-mobile-btn">
+            SUPPORT
+            <i class="ph-caret-down mobile-btn-icon"></i>
+          </button>
+          <ul class="column">
+            <li class="footer-link">Accessibility</li>
+            <li class="footer-link">Privacy policy</a></li>
+            <li><a href="#Contact" class="footer-link">Contact us</a></li>
+            <li class="footer-link">Find a repair shop</a></li>
+            <li class="footer-link">FAQ</a></li>
+          </ul>
         </div>
-      </section>
-    </main>
-
-    <footer>
-      <img
-        class="footer-image"
-        src="/images/home/footerbackground.png"
-        alt="black silhouette of an evergreen forest"
-      />
-      <div class="footer-outer">
-        <div class="footer-inner">
-          <div class="column-wrapper column-logo">
-            <a href="" class="logo">
-              <span class="rad">R<span class="a">a</span> &nbsp;D</span>BIKES
-            </a>
-            <div class="icons">
-              <a target="blank" href="https://www.instagram.com"
-                ><i class="ph-instagram-logo-light"></i
-              ></a>
-              <a target="blank" href="https://www.facebook.com"
-                ><i class="ph-facebook-logo-light"></i
-              ></a>
-              <a target="blank" href="https://www.pinterest.com"
-                ><i class="ph-pinterest-logo-light"></i
-              ></a>
-              <a target="blank" href="https://www.twitter.com"
-                ><i class="ph-twitter-logo-light"></i
-              ></a>
-            </div>
-          </div>
-
-          <div class="column-wrapper">
-            <button class="footer-mobile-btn">
-              SHOP<i class="ph-caret-down mobile-btn-icon"></i>
-            </button>
-            <ul class="column">
-              <li><a href="#Shop/Bikes" class="footer-link">Bikes</a></li>
-              <li><a href="#Shop/Gear" class="footer-link">Gear</a></li>
-              <li>
-                <a href="#Shop/Components" class="footer-link">Components</a>
-              </li>
-              <li>
-                <a href="#Shop/Bikes/Hardtail" class="footer-link">Hardtail</a>
-              </li>
-              <li>
-                <a href="#Shop/Bikes/FullSuspension" class="footer-link"
-                  >Full Suspension</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <div class="column-wrapper">
-            <button class="footer-mobile-btn">
-              EXPLORE<i class="ph-caret-down mobile-btn-icon"></i>
-            </button>
-            <ul class="column">
-              <li><a href="" class="footer-link">Our story</a></li>
-              <li><a href="" class="footer-link">Jobs</a></li>
-              <li><a href="" class="footer-link">Blog</a></li>
-              <li><a href="" class="footer-link">Sustainability</a></li>
-            </ul>
-          </div>
-
-          <div class="column-wrapper">
-            <button class="footer-mobile-btn">
-              SUPPORT
-              <i class="ph-caret-down mobile-btn-icon"></i>
-            </button>
-            <ul class="column">
-              <li><a href="" class="footer-link">Accessibility</a></li>
-              <li><a href="" class="footer-link">Privacy policy</a></li>
-              <li><a href="#Contact" class="footer-link">Contact us</a></li>
-              <li><a href="" class="footer-link">Find a repair shop</a></li>
-              <li><a href="" class="footer-link">FAQ</a></li>
-            </ul>
-          </div>
-          <div class="footer-copy">
-            <p>
-              &COPY;Rad Bikes is a web development project designed and coded by
-              <a target="blank" href="https://www.github.com/jakesmileydev"
-                >Jake Smiley</a
-              >
-            </p>
-          </div>
+        <div class="footer-copy">
+          <p>
+            &COPY;Rad Bikes is a web development project designed and developed by
+            <a target="_blank" href="https://www.github.com/jakesmileydev">Jake Smiley</a>
+          </p>
         </div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </footer>
+</body>
+
 </html>

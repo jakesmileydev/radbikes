@@ -42,7 +42,12 @@ class Data {
   _addToShoppingCart(product) {
     this.#shoppingCart.push(product);
   }
-  _getCurrentTotal() {}
+  _removeFromShoppingCart(product) {
+    const index = this.#shoppingCart.indexOf(product);
+    this.#shoppingCart.splice(index, 1);
+
+  }
+  _getCurrentTotal() { }
 }
 
 const products = [

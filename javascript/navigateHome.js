@@ -176,5 +176,12 @@ const navigateHome = function () {
       </div>
     </section>`
   );
-  initialize();
+  slider();
+  // mobileFooterNav();
+  ctaSubmit();
+  // cartSummaryEvents();
+  document.querySelector("main").addEventListener("click", handleMainClick);
+  // document.querySelector("header").addEventListener("click", handleHeaderClick);
+  // window.addEventListener("hashchange", navigate);
+  // window.addEventListener("load", navigate);
 };
