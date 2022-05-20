@@ -215,7 +215,7 @@ const products = [
     "DefendThermoHoodie",
     "Defend Thermo Hoodie",
     "Insulated, sweat-wicking hoodie for cold rides.",
-    "/images/product/dth.webp",
+    "/images/product/dth.jpg",
     [
       "Form-fitting hood fits easily under your helmet",
       "Breathable Polartec® insulation thatwicks sweat while keeping you warm",
@@ -230,7 +230,7 @@ const products = [
     "SpeedframeProFade",
     "Speedframe Pro Fade Helmet",
     "Performance focused open-face MTB helmet.",
-    "/images/product/sfpro.webp",
+    "/images/product/sfpro.jpg",
     [
       "MIPS™ reduces rotational motion and redirects forces to protect your dome",
       "Dual-density Varizorb™ EPS spread impact force",
@@ -246,7 +246,7 @@ const products = [
     "RampageProCarbon",
     "Rampage Pro Carbon Mips Helmet",
     "The MTB helmet trusted by UCI world cup champions.",
-    "/images/product/rampro.webp",
+    "/images/product/rampro.jpg",
     [
       "Designed with direct input from our elite downhill and freeride athletes",
       "MIPS™ reduces rotational motion and redirects forces to protect your dome",
@@ -261,7 +261,7 @@ const products = [
     "VueStray",
     "Vue Stray Goggles",
     "See more with pro-level Vue goggles.",
-    "/images/product/vsgog.webp",
+    "/images/product/vsgog.jpg",
     [
       "Widest field of view possible and reduces distractions from the side",
       "Turn-to-release tabs allow you to change lenses in seconds",
@@ -276,7 +276,7 @@ const products = [
     "DefendFire",
     "Defend Fire Gloves",
     "Water resistant cold weather MTB gloves with D30® armor.",
-    "/images/product/dfg.webp",
+    "/images/product/dfg.jpg",
     [
       "Brushed Cordura® top-hand material offers superior durability with a warm, comfortable, and water-resistant build",
       "Ax Suede™ slim fleece palm for warmth without sacrificing bar feel",
@@ -323,7 +323,7 @@ const products = [
     "TopFuelC",
     "Top Fuel C Frameset",
     "Top Fuel C is a carbon full suspension frameset made for a super-fast and fun down-county build.",
-    "/images/product/tfc.webp",
+    "/images/product/tfc.jpg",
     [
       "OCLV Mountain Carbon frame with Mino Link adjustable geometry",
       "Knock Block 2.0 headset",
@@ -338,7 +338,7 @@ const products = [
     "SRAMBrakeLever",
     "SRAM Code RSC HYD Brake Lever/Caliper",
     "SRAM added 15% extra piston power and 30% more volume in the lever reservoir to the Code RSC, ensuring peak performance for the full run.",
-    "/images/product/scrsc.webp",
+    "/images/product/scrsc.jpg",
     [
       "2-piece caliper construction with 4 phenolic plastic pistons",
       "Forged aluminum lever with bearing pivot and contact adjust",
