@@ -84,15 +84,24 @@ const removeItemFromShoppingCart = function (e) {
   removeCartRow(thisProduct);
 };
 const handleMainClick = function (e) {
+  // Close the cart summary if main is clicked
+  closeCartSummary();
+
   // Sort buttons in shop
   if (e.target.classList.contains("sort-btn")) return sortShop(e);
   // Add to cart button on product page
   if (e.target.classList.contains("product-page-add")) return addToCart(e);
+  // + and - buttons on shopping cart page
   if (
     e.target.closest(".cart-item-add") ||
     e.target.closest(".cart-item-subtract")
   )
     return changeCartQuantity(e);
+  // Add to cart button in featured section on home page
+  if (e.target.classList.contains("featured-product-button"))
+    return addToCart(e);
+
+  //
   if (e.target.closest(".cart-item-remove"))
     return removeItemFromShoppingCart(e);
 };
@@ -103,8 +112,7 @@ const handleHeaderClick = function (e) {
 
   // View cart btn in cart summary
   if (e.target.classList.contains("view-cart-btn")) {
-    window.location.hash = "#ShoppingCart";
-    return openShoppingCart();
+    return (window.location.hash = "#ShoppingCart");
   }
   if (e.target.closest(".mobile-nav-btn-wrapper")) {
     toggleMobileNav();

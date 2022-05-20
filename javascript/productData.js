@@ -45,9 +45,8 @@ class Data {
   _removeFromShoppingCart(product) {
     const index = this.#shoppingCart.indexOf(product);
     this.#shoppingCart.splice(index, 1);
-
   }
-  _getCurrentTotal() { }
+  _getCurrentTotal() {}
 }
 
 const products = [
@@ -319,21 +318,7 @@ const products = [
     ["COMPONENTS"],
     "SPECIALIZED"
   ),
-  new Product(
-    "DHX",
-    "2022 FOX DHX",
-    "DHX brings coil-sprung, magic-carpet, trail smoothing performance in a wide range of configurations to the trails and beyond.",
-    "/images/product/dhx.jpg",
-    [
-      "ALL-NEW chassis and damper",
-      "LSC (Low Speed Compression) adjuster",
-      "Reduced damper noise",
-      "Full diameter spring retainer with wire ring (like DHX2)",
-    ],
-    560,
-    ["COMPONENTS"],
-    "FOX"
-  ),
+
   new Product(
     "TopFuelC",
     "Top Fuel C Frameset",

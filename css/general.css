@@ -264,7 +264,7 @@ header .logo {
 
 .mobile-nav-btn {
   width: 2.2rem;
-  height: 1.6rem;
+  height: 1.7rem;
   position: relative;
   margin: 1rem;
   transform: rotate(0deg);
@@ -285,19 +285,20 @@ header .logo {
 }
 
 .mobile-nav-btn span:nth-child(1) {
-  top: 10%;
+  top: 0;
 }
 
 .mobile-nav-btn span:nth-child(2) {
-  top: 50%;
+  top: 10px;
 }
 
 .mobile-nav-btn span:nth-child(3) {
-  top: 90%;
+  top: 20px;
 }
 
 .mobile-nav-btn.mobile-nav-btn--open span:nth-child(1) {
-  top: 50%;
+  height: 2px;
+  top: 10px;
   transform: rotate(135deg);
 }
 
@@ -307,7 +308,8 @@ header .logo {
 }
 
 .mobile-nav-btn.mobile-nav-btn--open span:nth-child(3) {
-  top: 50%;
+  height: 2px;
+  top: 10px;
   transform: rotate(-135deg);
 }
 

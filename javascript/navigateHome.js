@@ -89,14 +89,16 @@ const navigateHome = function () {
       <div class="slider">
         <div class="slide">
           <div class="featured-product">
-            <img
-              src="/images/featured/sjcompalloy.webp"
-              alt="Stumpjumper Comp Alloy mountain bike"
-            />
+            
+              <img
+                src="/images/featured/sjcompalloy.webp"
+                alt="Stumpjumper Comp Alloy mountain bike"
+              />
+            
             <p class="featured-product-name">Stumpjumper Comp Alloy</p>
             <p class="featured-product-price">$ 3,600</p>
-            <button>ADD TO CART</button>
-            <a href="" class="featured-product-link">Learn More</a>
+            <button class="featured-product-button" data-id="StumpjumperCompAlloy">ADD TO CART</button>
+            <a href="#Product/StumpjumperCompAlloy" class="featured-product-link">Learn More</a>
           </div>
         </div>
         <div class="slide">
@@ -107,8 +109,8 @@ const navigateHome = function () {
             />
             <p class="featured-product-name">Turbo Levo Alloy</p>
             <p class="featured-product-price">$ 5,500</p>
-            <button>ADD TO CART</button>
-            <a href="" class="featured-product-link">Learn More</a>
+            <button class="featured-product-button" data-id="TurboLevoAlloy">ADD TO CART</button>
+            <a href="#Product/TurboLevoAlloy" class="featured-product-link">Learn More</a>
           </div>
         </div>
         <div class="slide">
@@ -119,8 +121,8 @@ const navigateHome = function () {
             />
             <p class="featured-product-name">Rockhopper 27.5</p>
             <p class="featured-product-price">$ 700</p>
-            <button>ADD TO CART</button>
-            <a href="" class="featured-product-link">Learn More</a>
+            <button class="featured-product-button" data-id="Rockhopper">ADD TO CART</button>
+            <a href="#Product/Rockhopper" class="featured-product-link">Learn More</a>
           </div>
         </div>
         <div class="slide">
@@ -131,8 +133,8 @@ const navigateHome = function () {
             />
             <p class="featured-product-name">Stumpjumper Evo Expert</p>
             <p class="featured-product-price">$ 6,300</p>
-            <button>ADD TO CART</button>
-            <a href="" class="featured-product-link">Learn More</a>
+            <button class="featured-product-button" data-id="StumpjumperEvoExpert">ADD TO CART</button>
+            <a href="#Product/StumpjumperEvoExpert" class="featured-product-link">Learn More</a>
           </div>
         </div>
         <div class="slide">
@@ -143,8 +145,8 @@ const navigateHome = function () {
             />
             <p class="featured-product-name">Fuse Comp 29</p>
             <p class="featured-product-price">$ 1,400</p>
-            <button>ADD TO CART</button>
-            <a href="" class="featured-product-link">Learn More</a>
+            <button class="featured-product-button" data-id="FuseComp29">ADD TO CART</button>
+            <a href="#Product/FuseComp29" class="featured-product-link">Learn More</a>
           </div>
         </div>
       </div>

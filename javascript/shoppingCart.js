@@ -26,9 +26,11 @@ const updateCartSummary = function () {
           <p class="summary-item-price">$ ${item.price.toLocaleString()}</p>
           <p class="summary-item-qty">QTY: ${item.quantityInCart}</p>
         </div>
-        <i data-id="${item.id
-      }" class="ph-x cart-summary-delete" title="Remove Item" data-id="${item.id
-      }"></i>
+        <i data-id="${
+          item.id
+        }" class="ph-x cart-summary-delete" title="Remove Item" data-id="${
+      item.id
+    }"></i>
       </div>
         `;
   });
@@ -42,7 +44,7 @@ const updateCartSummary = function () {
   document.querySelector(
     ".subtotal-amount"
   ).textContent = `$ ${subtotal.toLocaleString()}.00`;
-}
+};
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -142,7 +144,6 @@ const renderCartItems = function () {
   }
   let HTML = "";
   productData._getShoppingCart().forEach((item) => {
-
     HTML += `
       <div class="cart-row" data-id="${item.id}">
         <div class="cart-item-details">
@@ -163,7 +164,9 @@ const renderCartItems = function () {
           </div>
           <div class="cart-item-remove" data-id="${item.id}">REMOVE</div>
         </div>
-        <div class="cart-item-total">$ ${(item.price * item.quantityInCart).toLocaleString()}
+        <div class="cart-item-total">$ ${(
+          item.price * item.quantityInCart
+        ).toLocaleString()}
         </div>
       </div>
       `;
@@ -173,9 +176,8 @@ const renderCartItems = function () {
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 
-
 const updateCartTotals = function () {
-  if (!document.querySelector('.section--shopping-cart')) return;
+  if (!document.querySelector(".section--shopping-cart")) return;
   const subtotal = productData._getShoppingCart().reduce((prev, curr) => {
     return prev + curr.quantityInCart * curr.price;
   }, 0);
@@ -196,15 +198,9 @@ const updateCartTotals = function () {
   document.querySelector(".cart-total-total").textContent = `$ ${(
     Math.round((subtotal + shippingAmount + Number.EPSILON) * 100) / 100
   ).toLocaleString()}`;
-
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////
-
-const openCartSummary = function () {
-  document.querySelector(".cart-summary").classList.add("cart-summary--open");
-  document.querySelector(".shopping-cart i").style.color = "red";
-};
 
 const closeCartSummary = function () {
   document
@@ -216,24 +212,18 @@ const closeCartSummary = function () {
 const cartSummaryEvents = function () {
   document
     .querySelector(".shopping-cart")
-    .addEventListener("mouseenter", openCartSummary);
-  document
-    .querySelector(".shopping-cart")
-    .addEventListener("mouseleave", function (e) {
-      if (e.relatedTarget === document.querySelector(".cart-summary")) return;
-      closeCartSummary();
-    });
-  document
-    .querySelector(".cart-summary")
-    .addEventListener("mouseleave", function (e) {
-      if (e.target === document.querySelector(".shopping-cart")) return;
-      closeCartSummary();
-    });
-  document
-    .querySelector(".shopping-cart")
     .addEventListener("click", function () {
       document
         .querySelector(".cart-summary")
         .classList.toggle("cart-summary--open");
+      if (
+        document
+          .querySelector(".cart-summary")
+          .classList.contains("cart-summary--open")
+      ) {
+        document.querySelector(".shopping-cart i").style.color = "red";
+      } else {
+        document.querySelector(".shopping-cart i").style.color = "#000";
+      }
     });
 };
