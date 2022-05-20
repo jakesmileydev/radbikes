@@ -60,6 +60,7 @@ const changeCartQuantity = function (e) {
   }
   e.target.closest('.cart-item-quantity-container').querySelector('.cart-item-quantity').textContent = thisProduct.quantityInCart;
   updateCartSummary();
+  updateCartTotals();
   // START HERE TOMORROW MAKE IT UPDATE THE ITEM TOTAL WHEN YOU CHANGE QUANTITY
   // HERERERAWERA ;LESKJFA;SLDKFJ;ALSKDJF;LASKJDF;ALSKDJF;LASKJDF;LASJFUCK
 }
