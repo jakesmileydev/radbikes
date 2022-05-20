@@ -24,10 +24,4 @@ const openContactPage = function () {
   document
     .querySelector("main")
     .insertAdjacentHTML("afterbegin", contactPageHTML);
-  document
-    .querySelector(".contact-form")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
-      console.log("submit form");
-    });
 };
