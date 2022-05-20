@@ -21,14 +21,10 @@ const mobileFooterNav = function () {
 };
 
 const toggleMobileNav = function () {
-
   document
     .querySelector(".mobile-nav-btn")
     .classList.toggle("mobile-nav-btn--open");
-  document
-    .querySelector(".main-nav")
-    .classList.toggle("main-nav-mobile-open");
-
+  document.querySelector(".main-nav").classList.toggle("main-nav-mobile-open");
 };
 
 const ctaSubmit = function () {
@@ -52,54 +48,65 @@ const changeCartQuantity = function (e) {
     ._getData()
     .find((product) => product.id === e.target.dataset.id);
 
-  if (e.target.closest('.cart-item-subtract')) {
-    thisProduct.quantityInCart > 1 ? thisProduct.quantityInCart-- : '';
+  if (e.target.closest(".cart-item-subtract")) {
+    thisProduct.quantityInCart > 1 ? thisProduct.quantityInCart-- : "";
   }
-  if (e.target.closest('.cart-item-add')) {
+  if (e.target.closest(".cart-item-add")) {
     thisProduct.quantityInCart++;
   }
-  e.target.closest('.cart-item-quantity-container').querySelector('.cart-item-quantity').textContent = thisProduct.quantityInCart;
+  e.target
+    .closest(".cart-item-quantity-container")
+    .querySelector(".cart-item-quantity").textContent =
+    thisProduct.quantityInCart;
+  e.target
+    .closest(".cart-row")
+    .querySelector(".cart-item-total").textContent = `$ ${(
+    thisProduct.quantityInCart * thisProduct.price
+  ).toLocaleString()}`;
   updateCartSummary();
   updateCartTotals();
-  // START HERE TOMORROW MAKE IT UPDATE THE ITEM TOTAL WHEN YOU CHANGE QUANTITY
-  // HERERERAWERA ;LESKJFA;SLDKFJ;ALSKDJF;LASKJDF;ALSKDJF;LASKJDF;LASJFUCK
-}
+};
 const removeCartRow = function (product) {
-  const array = Array.from(document.querySelectorAll('.cart-row'));
-  array.forEach(row => {
+  const array = Array.from(document.querySelectorAll(".cart-row"));
+  array.forEach((row) => {
     if (row.dataset.id === product.id) row.remove();
-  })
+  });
 };
 const removeItemFromShoppingCart = function (e) {
   const thisProduct = productData
     ._getData()
     .find((product) => product.id === e.target.dataset.id);
 
-
   thisProduct.quantityInCart = 0;
   productData._removeFromShoppingCart(thisProduct);
   updateCartSummary();
   updateCartTotals();
   removeCartRow(thisProduct);
-}
+};
 const handleMainClick = function (e) {
   // Sort buttons in shop
   if (e.target.classList.contains("sort-btn")) return sortShop(e);
   // Add to cart button on product page
   if (e.target.classList.contains("product-page-add")) return addToCart(e);
-  if (e.target.closest('.cart-item-add') || e.target.closest('.cart-item-subtract')) return changeCartQuantity(e);
-  if (e.target.closest('.cart-item-remove')) return removeItemFromShoppingCart(e);
+  if (
+    e.target.closest(".cart-item-add") ||
+    e.target.closest(".cart-item-subtract")
+  )
+    return changeCartQuantity(e);
+  if (e.target.closest(".cart-item-remove"))
+    return removeItemFromShoppingCart(e);
 };
 
 const handleHeaderClick = function (e) {
-  if (e.target.closest('.cart-summary-delete')) return removeItemFromShoppingCart(e);
+  if (e.target.closest(".cart-summary-delete"))
+    return removeItemFromShoppingCart(e);
 
   // View cart btn in cart summary
   if (e.target.classList.contains("view-cart-btn")) {
     window.location.hash = "#ShoppingCart";
     return openShoppingCart();
   }
-  if (e.target.closest('.mobile-nav-btn-wrapper')) {
+  if (e.target.closest(".mobile-nav-btn-wrapper")) {
     toggleMobileNav();
   }
 };
@@ -133,7 +140,7 @@ const navigate = function () {
     return openContactPage();
   }
   if (!location.includes("Shop")) return;
-  // If navigating to shop, render search bar, breadcrumbs, and filters 
+  // If navigating to shop, render search bar, breadcrumbs, and filters
   setUpShop();
   scroll(0, 0);
   // Clear existing sort indicators for collections filters in shop
